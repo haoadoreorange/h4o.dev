@@ -3,96 +3,84 @@
 
 {% block twitter_card %}
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@eevee">
+<meta name="twitter:site" content="@haoadoresorange">
 <meta name="og:type" content="website">
 <meta name="og:title" content="{{ SITENAME }}">
-<meta name="og:description" content="hello!  i'm eevee and this is my website.  i hope you enjoy it!">
+<meta name="og:description" content="Welcome to my thoughts, i'm haoadoresorange">
 <meta name="og:image" content="{{ SITEURL }}/theme/images/home-eevee2.png">
 {% endblock %}
 
 {% block entirebody %}
 <main class="homepage">
     <div class="intro">
-        <p>Hey!  I'm Eevee.  I make stuff.  Here's some stuff I made.</p>
-        <p>You can keep up with what I'm doing by following my very active <a href="https://twitter.com/eevee">Twitter</a> (hint: you can turn retweets off per-user), or by following the feed for my <a href="/dev/">dev log</a>.</p>
-        <p>If you like my work, you can <a href="https://www.patreon.com/eevee">help pay my salary</a>!</p>
+        <p>Hello there ! It's Hao, short for Hao Adores Orange, or Hao Adores Oyster, or anything you like (;</p>
+        <p>I think of myself as software dev, tryna-be skier, sometimes a funny random thinker...</p>
+        <p>Here you'll find stuffs I made/wrote, a list of my favorite comtam address, and some other random things.</p>
+        <p>You can <a href="https://www.buymeacoffee.com/haoadoresorange">feed me a comtam</a> if you find joy in any of this, so you can watch me grow and do things I love <3</p>
+        <p>Last but not least, feel free to reach out, for anything, or just as simple as making friend.</p>
+    </div>
+
+    {% macro _render_button(title, url, color, image, desc) %}
+        <a href="{{ url }}" class="button" style="background-color: {{ color }};">
+            <img src="{{ SITEURL }}/theme/images/{{ image }}" alt="">
+            <label>{{ title }}</label>
+        </a>
+    {% endmacro %}
+
+    <div class="account-buttons">
+        {% for i in range(5) %}
+            {{ _render_button(*SOCIAL_EX[i]) }}
+        {% endfor %}
     </div>
 
     <div class="account-buttons">
-    <a href="mailto:eevee.fuzzynotepad@veekun.com" class="button" style="background-color: #9966cc;">
-        <img src="/theme/images/logo-email.png" alt="">
-        <label>email</label>
-    </a>
-    <a href="https://twitter.com/eevee" class="button" style="background-color: #55acee;">
-        <img src="/theme/images/logo-twitter.png" alt="">
-        <label>twitter</label>
-    </a>
-    <a rel="me" href="https://mastodon.social/@eevee" class="button" style="background-color: #3088d4;">
-        <img src="/theme/images/logo-mastodon.png" alt="">
-        <label>mastodon</label>
-    </a>
-    <a href="https://twitch.tv/lexyeevee" class="button" style="background-color: #6441a4;">
-        <img src="/theme/images/logo-twitch.png" alt="">
-        <label>twitch</label>
-    </a>
-    <a href="https://www.youtube.com/user/lexyeevee" class="button" style="background-color: #cc181e;">
-        <img src="/theme/images/logo-youtube.png" alt="">
-        <label>youtube</label>
-    </a>
+        {% for i in range(5, 7) %}
+            {{ _render_button(*SOCIAL_EX[i]) }}
+        {% endfor %}
     </div>
-
-    <div class="account-buttons">
-    <a href="https://github.com/eevee" class="button" style="background-color: #4183c4;">
-        <img src="/theme/images/logo-github.png" alt="">
-        <label>github</label>
-    </a>
-    <a href="https://eevee.itch.io/" class="button" style="background-color: #fa5c5c;">
-        <img src="/theme/images/logo-itch.png" alt="">
-        <label>itch.io</label>
-    </a>
-    <a href="https://www.patreon.com/eevee" class="button" style="background-color: #ff5900;">
-        <img src="/theme/images/logo-patreon.png" alt="">
-        <label>patreon</label>
-    </a>
-    <a href="https://cash.me/$eevee" class="button" style="background-color: #29c501;">
-        <img src="/theme/images/logo-square-cash.png" alt="">
-        <label>square</label>
-    </a>
-    <a href="https://www.paypal.me/lexyeevee" class="button" style="background-color: #009cde;">
-        <img src="/theme/images/logo-paypal.png" alt="">
-        <label>paypal</label>
-    </a>
+    
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <div id="nes-css" style="font-family: 'Press Start 2P'; color: white; box-sizing: border-box;">
+        <form action="https://dev.us20.list-manage.com/subscribe/post?u=60c5be8409cd054ef651f5556&amp;id=67ea7a26df" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+            <div style="display: flex; flex-direction: column; align-items: center" class="nes-field">
+                <label style="width: 75%; text-align: center; margin-top: 2vh; line-height: 1.7" for="mce-EMAIL">Want annoying notification anytime I have random thoughts ? Please do !</label>
+                <input style="width: 75%; background: wheat; color: black; margin-bottom: 1.3vh;" type="email" value="" name="EMAIL" id="mce-EMAIL" class="nes-input is-success" placeholder="haoadores@comtam.dev" required>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_60c5be8409cd054ef651f5556_67ea7a26df" tabindex="-1" value=""></div>
+                <button class="nes-btn is-primary">subscribe</button>
+            </div>
+        </form>
     </div>
-
+    
     <h1>Writing</h1>
     <section class="tile-container">
         <section class="tile">
             <header>
-                <a href="https://eev.ee/blog/" class="cool-button" style="background-color: #f6b441;">
+                <a href="{{ SITEURL }}/blog/" class="cool-button" style="background-color: #f6b441;">
                     <h2>blog</h2>
                 </a>
             </header>
-            <p>I write about game development, learning to draw, and miscellaneous technical stuff.  I like to explore a single topic in depth, so my writing can be a bit long-winded.</p>
+            <p>I write about softwares, technical stuffs and various topics. I know it's sleepy reading long text, so I'm trying my best to keep short.</p>
         </section>
         <section class="tile">
             <header>
-                <a href="https://eev.ee/dev/" class="cool-button" style="background-color: #ee7300;">
+                <a href="{{ SITEURL }}/dlog/" class="cool-button" style="background-color: #ee7300;">
                     <h2>dev log</h2>
                 </a>
             </header>
-            <p>Every week, I write up what I've been working on.  It helps me see how much I'm getting done, and it's lower-volume than Twitter if you're curious what I'm up to.</p>
+            <p>Every couple days, I tend to write up what I've been working on.  It helps me see how much I'm getting done.</p>
         </section>
-        <section class="tile">
+        <!-- <section class="tile">
             <header>
                 <a href="https://eev.ee/release/" class="cool-button" style="background-color: #4a83c5;">
                     <h2>releases</h2>
                 </a>
             </header>
             <p>Announcements of things I've released into the wild.  Varies from a quick link to extensive commentary that you may find interesting.</p>
-        </section>
+        </section> -->
     </section>
 
-    <h1>Art</h1>
+    <!-- <h1>Art</h1>
     <section class="tile-container">
         <section class="tile">
             <header>
@@ -702,6 +690,6 @@
             </header>
             <p>A web browser.  I made a microscopic CSS patch to a feature that has since been removed.  My name ended up on their <a href="https://wiki.mozilla.org/Monument">obelisk</a>, so it still counts.</p>
         </section>
-    </section>
+    </section> -->
 </main>
 {% endblock %}
