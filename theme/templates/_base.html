@@ -59,6 +59,74 @@
 
 <body>
     {% block entirebody %}{% endblock %}
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <style>
+        .nes-css {
+            font-family: 'Press Start 2P';
+            color: white;
+        }
+        .nes-css .nes-field {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #subscribe-label {
+            text-align: center;
+            margin-top: 2em;
+            margin-bottom: 0.6em;
+            font-size: 95%;
+        }
+        #subscribe-form {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            width: 95%;
+        }
+        #subscribe-form input {
+            background: wheat;
+            color: black;
+            margin-bottom: 1.3vh;
+            font-size: 90%;
+            padding-top: 0.6rem;
+        }
+        #subscribe-form button {
+            font-size: 95%;
+        }
+        @media (min-width: 1024px) {
+            #subscribe-label {
+                font-size: 120%;
+            }
+            #subscribe-form {
+                box-sizing: border-box;
+                width: 70%;
+            }
+            #subscribe-form input {
+                width: calc(100% - 11em);
+                padding-right: 11em;
+            }
+            #subscribe-form button {
+                align-self: center;
+                font-size: 70%;
+                width: 11em;
+                margin-left: calc(-11em - 8px);
+                margin-top: -0.3em;
+            }
+        }
+    </style>
+    <div class="nes-css">
+        <form action="https://dev.us20.list-manage.com/subscribe/post?u=60c5be8409cd054ef651f5556&amp;id=67ea7a26df" method="post" target="_blank" novalidate>
+            <div class="nes-field">
+                <label for="mce-EMAIL" id="subscribe-label">Keeping up with the Haos</label>
+                <div id="subscribe-form">
+                    <input type="email" name="EMAIL" id="mce-EMAIL" class="nes-input is-success" placeholder="haoadores@comtam.dev" required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_60c5be8409cd054ef651f5556_67ea7a26df" tabindex="-1" value=""></div>
+                    <button class="nes-btn is-primary">subscribe</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
     <footer role="contentinfo">
         <p>
             © 2022 haoadoresorange
@@ -70,14 +138,14 @@
                     src="https://i.creativecommons.org/l/by/3.0/us/80x15.png">
             </a>
             ·
-            Backgrounds from <a href="https://www.toptal.com/designers/subtlepatterns/">Subtle Patterns</a>
-            .
-            Theme by <a href="https://eev.ee/">Eevee</a>, <a href="https://eev.ee/">NES.css</a>
+            backgrounds from <a href="https://www.toptal.com/designers/subtlepatterns/">Subtle Patterns</a>
+            · 
+            theme by <a href="https://eev.ee/">Eevee</a>, <a href="https://eev.ee/">NES.css</a>
         </p>
         <p>
             Powered by <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a>
             ·
-            <a href="https://github.com/haoadoresorange/haoadores.comtam.dev">Source code</a>
+            <a href="https://github.com/haoadoresorange/haoadores.comtam.dev">source code</a>
         </p>
     </footer>
 

@@ -46,7 +46,7 @@ $block-border: scale-color($eevee-socks, $saturation: -40%, $lightness: +10%);
 }
 
 @mixin phone-size {
-    @media (max-width: 400px) {
+    @media (max-width: 414px) { // iPhone XS Max
         @content;
     }
 }
@@ -73,9 +73,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
     font-size: 2rem;
-}
-header[role="banner"] > h1 {
-    font-size: 3em;
 }
 h2 {
     font-size: 1.75em;
@@ -137,13 +134,14 @@ body > header {
     @include phone-size {
         margin-top: 1em;
         min-height: auto;
-        background: none;
+        background: url(/theme/images/home-eevee2.png) no-repeat left / 96px;
     }
 
     // main site title
     h1 {
         position: absolute;
-        font-size: 4em;
+        font-size: 3em;
+        text-align: right;
         margin: 0 2rem;
         bottom: 0;
         right: 0;
@@ -162,9 +160,8 @@ body > header {
         @include phone-size {
             // compensate for lack of huge background
             position: static;
-            margin: 0.25em;
+            margin: 0em 0.5em;
             font-size: 2em;
-            padding: 1rem;
         }
     }
 
@@ -241,7 +238,6 @@ body > #main {
 body > footer {
     margin: 0.5em 0 4em;
     color: $offwhite;
-    text-transform: lowercase;
 
     display: flex;
     justify-content: space-between;
@@ -335,7 +331,7 @@ body > footer {
         margin-right: 1em;
 
         img {
-            height: (186px / 2);
+            height: calc(186px / 2);
         }
     }
     figcaption {
@@ -863,10 +859,15 @@ a.photo {
         -ms-interpolation-mode: nearest-neighbor; /* ie */
 
         @include phone-size {
-            // don't scale eevee background
-            background-size: auto;
-            padding-left: 48px;
-        }
+            padding-left: unset;
+            padding-top: 120px;
+            text-align: center;
+            .intro-content {
+                display: inline-block;
+                text-align: left;
+            }
+            background: url(/theme/images/home-eevee2.png) no-repeat top / 150px;
+        } 
 
         p {
             margin: 1em;
@@ -1479,7 +1480,7 @@ $colorbox-bottom-margin: 4rem;
     @include phone-size {
         font-size: 1rem;
         padding: 0.5rem;
-        line-height: ($colorbox-bottom-margin - 1rem) / 3;
+        line-height: calc(($colorbox-bottom-margin - 1rem) / 3);
     }
 }
 #cboxPrevious,
@@ -1509,7 +1510,7 @@ $colorbox-bottom-margin: 4rem;
 .cboxSlideshow_off #cboxSlideshow{background-position:-150px -25px; right:27px;}
 .cboxSlideshow_off #cboxSlideshow:hover{background-position:-125px 0px;}
 
-#nes-css {
+.nes-css {
     all: initial;
     * {
         all: unset;
