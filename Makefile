@@ -76,10 +76,10 @@ devserver-global:
 	make -j2 watch-scss watch-pelican-global
 
 publish:
-	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
+	sass $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 	
 publish-local:
-	sass $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONFLOCAL)" $(PELICANOPTS)	
+	sass $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -s "$(PUBLISHCONFLOCAL)" $(PELICANOPTS)	
 
 
 .PHONY: html help clean regenerate serve serve-global devserver publish 

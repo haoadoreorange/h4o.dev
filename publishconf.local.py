@@ -18,6 +18,9 @@ FEED_RSS = 'feeds/rss.xml'
 FEED_ALL_RSS = 'feeds/all.rss.xml'
 CATEGORY_FEED_RSS = 'feeds/{slug}.rss.xml'
 
+DELETE_OUTPUT_DIRECTORY = True
+OUTPUT_PATH = 'output-publish/'
+
 # Following items are often useful when publishing
 
 DISQUS_SITENAME = 'haoadorescomtam'
