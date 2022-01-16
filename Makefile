@@ -7,7 +7,8 @@ INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
-
+PUBLISHCONFLOCAL=$(BASEDIR)/publishconf.local.py
+SASSARGS=--no-source-map theme/static/sass/all.scss theme/static/css/all.css
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -45,7 +46,10 @@ help:
 	@echo '                                                                          '
 
 html:
-	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	sass $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	
+watch-scss:
+	sass -w $(SASSARGS)
 
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
@@ -58,15 +62,24 @@ serve:
 
 serve-global:
 	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS) -b $(SERVER)
-
-devserver:
+	
+watch-pelican:	
 	"$(PELICAN)" -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
-devserver-global:
+devserver:
+	make -j2 watch-scss watch-pelican
+	
+watch-pelican-global:
 	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -b 0.0.0.0
+
+devserver-global:
+	make -j2 watch-scss watch-pelican-global
 
 publish:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
+	
+publish-local:
+	sass $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONFLOCAL)" $(PELICANOPTS)	
 
 
 .PHONY: html help clean regenerate serve serve-global devserver publish 
