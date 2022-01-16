@@ -162,7 +162,7 @@ TAGS_SAVE_AS = 'tags/index.html'
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
 # Plugins
 PLUGIN_PATHS = ["pelican-plugins"]
