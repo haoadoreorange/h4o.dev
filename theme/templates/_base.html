@@ -64,33 +64,28 @@
         .nes-css {
             font-family: 'Press Start 2P';
             color: white;
+            display: block;
+            margin: 1em;
+            margin-top: 2.3em;
         }
         .nes-css .nes-field {
             display: flex;
             flex-direction: column;
             align-items: center;
+            font-size: 89%;
         }
         #subscribe-label {
             text-align: center;
-            margin-top: 2em;
-            margin-bottom: 0.6em;
-            font-size: 95%;
         }
         #subscribe-form {
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
-            width: 95%;
         }
         #subscribe-form input {
             background: wheat;
             color: black;
-            margin-bottom: 1.3vh;
-            font-size: 90%;
-            padding-top: 0.6rem;
-        }
-        #subscribe-form button {
-            font-size: 95%;
+            margin-bottom: 0.5rem;
         }
         @media (min-width: 1024px) {
             #subscribe-label {
@@ -100,16 +95,19 @@
                 box-sizing: border-box;
                 width: 70%;
             }
+            :root {
+                --button-width: 11.5em;
+            }
             #subscribe-form input {
-                width: calc(100% - 11em);
-                padding-right: 11em;
+                width: calc(100% - var(--button-width));
+                padding-right: var(--button-width);
             }
             #subscribe-form button {
                 align-self: center;
-                font-size: 70%;
-                width: 11em;
-                margin-left: calc(-11em - 8px);
-                margin-top: -0.3em;
+                font-size: 75%;
+                width: var(--button-width);
+                margin-left: calc(0px - var(--button-width) - 8px);
+                margin-top: -0.1em;
             }
         }
     </style>
@@ -140,10 +138,10 @@
             ·
             backgrounds from <a href="https://www.toptal.com/designers/subtlepatterns/">Subtle Patterns</a>
             · 
-            theme by <a href="https://eev.ee/">Eevee</a>, <a href="https://eev.ee/">NES.css</a>
+            awesome theme by <a href="https://eev.ee/">Eevee</a>, <a href="https://eev.ee/">NES.css</a>
         </p>
         <p>
-            Powered by <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a>
+            powered by <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a>
             ·
             <a href="https://github.com/haoadoresorange/haoadores.comtam.dev">source code</a>
         </p>

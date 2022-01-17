@@ -246,6 +246,9 @@ body > footer {
         // no flexbox; just stack em
         display: block;
     }
+    @include phone-size {
+        margin: 0.5em 1em 4em;
+    }
 
     p {
         margin: 0;
@@ -794,7 +797,7 @@ a.photo {
     margin: 1em;
 
     // silly hack to make footer look better
-    & + footer {
+    & ~ footer {
         margin: 1em;
     }
 
@@ -1511,6 +1514,7 @@ $colorbox-bottom-margin: 4rem;
 .cboxSlideshow_off #cboxSlideshow:hover{background-position:-125px 0px;}
 
 .nes-css {
+    // localize framework
     all: initial;
     * {
         all: unset;

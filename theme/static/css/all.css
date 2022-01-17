@@ -171,6 +171,11 @@ body > footer {
     display: block;
   }
 }
+@media (max-width: 414px) {
+  body > footer {
+    margin: 0.5em 1em 4em;
+  }
+}
 body > footer p {
   margin: 0;
 }
@@ -636,7 +641,7 @@ a.photo {
   /* tablet sizes */
   /* phone sizes */
 }
-.homepage + footer {
+.homepage ~ footer {
   margin: 1em;
 }
 .homepage h1 {
