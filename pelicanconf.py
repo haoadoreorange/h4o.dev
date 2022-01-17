@@ -1,3 +1,5 @@
+import os
+
 AUTHOR = 'haoadoresorange'
 SITENAME = "Inside a comtam enthusiast's brain"
 SITEURL = ''
@@ -132,8 +134,13 @@ THEME = 'theme'
 def sort_by_article_count(tags):
     return sorted(tags, key=lambda pairs: len(pairs[1]), reverse=True)
 
+def use_colored_image(config):
+    splitted = os.path.splitext(config[3])
+    return (config[0], config[1], config[2], splitted[0] + "-color" + splitted[1], config[4])
+
 JINJA_FILTERS = dict(
     sort_by_article_count=sort_by_article_count,
+    use_colored_image=use_colored_image,
 )
 
 PATH = 'content/'

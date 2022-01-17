@@ -421,8 +421,8 @@ body > footer {
                         max-width: $size;
                         margin: 0 auto;
                         opacity: 0.9;
-                        filter: grayscale(100%) contrast(60%) brightness(1.25);
-                        -webkit-filter: grayscale(100%) contrast(60%) brightness(1.25);
+                        filter: contrast(60%) brightness(1.25);
+                        -webkit-filter: contrast(60%) brightness(1.25);
                     }
                 }
 

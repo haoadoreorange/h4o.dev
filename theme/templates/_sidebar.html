@@ -33,7 +33,7 @@
         {% endfor %}
         <li class="-empty"></li>
         {% for linkdef in SOCIAL_EX %}
-            {{ _render_link(*linkdef) }}
+            {{ _render_link(*(linkdef | use_colored_image)) }}
         {% endfor %}
     </ul>
 

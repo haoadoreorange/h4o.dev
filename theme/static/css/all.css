@@ -328,8 +328,8 @@ body > footer img {
   max-width: 1.5rem;
   margin: 0 auto;
   opacity: 0.9;
-  filter: grayscale(100%) contrast(60%) brightness(1.25);
-  -webkit-filter: grayscale(100%) contrast(60%) brightness(1.25);
+  filter: contrast(60%) brightness(1.25);
+  -webkit-filter: contrast(60%) brightness(1.25);
 }
 #sidebar .eevee-navigation > li > a .-label h2 {
   font-size: 1.2em;
