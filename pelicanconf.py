@@ -1,7 +1,7 @@
 import os
 
 AUTHOR = 'haoadoresorange'
-SITENAME = "Inside a comtam enthusiast's brain"
+SITENAME = "Inside com tam enthusiast's brain"
 SITEURL = ''
 
 TIMEZONE = 'America/Montreal'
