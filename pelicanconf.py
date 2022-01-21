@@ -30,17 +30,17 @@ AUTHOR_FEED_RSS = None
 # the default theme to be 2-tuples, but I need more info.
 LINKS_EX = ((
     'everything',
-    '/everything/',
+    '/everything',
     '#c57be6', 'category-everything.png',
     "why chose when you can have it all",
 ), (   
     'blog',
-    '/blog/',
+    '/blog',
     '#f6b441', 'category-blog.png',
     "detailed, thoughtful prose about softwares and various subjects",
 ), (
     'dlog',
-    '/dlog/',
+    '/dlog',
     '#ee7300', 'category-dlog.png',
     "quick updates on what i'm doing lately",
 ), (
@@ -60,7 +60,7 @@ LINKS_EX = ((
 #    "our house is overrun with them and they are the best",
 #), (
     'archives',
-    '/everything/archives/',
+    '/everything/archives',
     '#399ccd', 'category-archives.png',
     "travel back in time",
 ))
@@ -125,8 +125,8 @@ SOCIAL_EX = ((
 DEFAULT_PAGINATION = 10
 DEFAULT_ORPHANS = 3
 PAGINATION_PATTERNS = (
-    (1, '{base_name}/', '{base_name}/index.html'),
-    (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
+    (1, '{base_name}', '{base_name}/index.html'),
+    (2, '{base_name}/page/{number}', '{base_name}/page/{number}/index.html'),
 )
 
 THEME = 'theme'
@@ -154,16 +154,16 @@ TEMPLATE_PAGES = {
     '../theme/templates/home.html': 'index.html',
 }
 
-ARTICLE_URL = '{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_URL = '{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}'
 ARTICLE_SAVE_AS = '{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 AUTHOR_SAVE_AS = False
 AUTHORS_SAVE_AS = False
-CATEGORY_URL = '{slug}/'
+CATEGORY_URL = '{slug}'
 CATEGORY_SAVE_AS = '{slug}/index.html'
 INDEX_SAVE_AS = 'everything/index.html'
-TAG_URL = 'tags/{slug}/'
+TAG_URL = 'tags/{slug}'
 TAG_SAVE_AS = 'tags/{slug}/index.html'
-TAGS_URL = 'tags/'
+TAGS_URL = 'tags'
 TAGS_SAVE_AS = 'tags/index.html'
 
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
