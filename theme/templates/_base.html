@@ -55,6 +55,18 @@
     <meta name="og:description" content="{{ article.summary[:200] | striptags }}">
     {% endif %}
     {% endblock %}
+    
+    {% if GOOGLE_ANALYTICS %}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '{{ GOOGLE_ANALYTICS }}');
+        </script>
+    {% endif %}
 </head>
 
 <body>
@@ -126,6 +138,7 @@
     </div>
     
     <footer role="contentinfo">
+        <div style="display: block;">
         <p>
             © 2022 haoadoresorange
             ·
@@ -136,18 +149,25 @@
                     src="https://i.creativecommons.org/l/by/3.0/us/80x15.png">
             </a>
             ·
-            backgrounds from <a href="https://www.toptal.com/designers/subtlepatterns/">Subtle Patterns</a>
-            · 
-            awesome theme by <a href="https://eev.ee/">Eevee</a>, <a href="https://eev.ee/">NES.css</a>
+            awesome theme by <a href="https://eev.ee/">Eevee</a>
         </p>
         <p>
-            powered by <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a>
+            © 
+            backgrounds from <a href="https://www.toptal.com/designers/subtlepatterns/">Subtle Patterns</a>
+            ·
+            shy owl from <a href="https://www.maxpixel.net/Eyes-Animal-Character-Bird-Owl-Cartoon-Cute-Good-4073873">Max Pixel</a>
+            · 
+            pinky piggy by <a href="https://openclipart.org/detail/295143/feed-the-pig">cactus cowboy</a>
+        </p>
+        </div>
+        <p>
+            Powered by <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a>
             ·
             <a href="https://github.com/haoadoresorange/haoadores.comtam.dev">source code</a>
         </p>
     </footer>
 
-    {% if GOOGLE_ANALYTICS %}
+    <!-- {% if GOOGLE_ANALYTICS %}
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -157,6 +177,6 @@
         ga('set', 'forceSSL', true);
         ga('send', 'pageview');
     </script>
-    {% endif %}
+    {% endif %} -->
 </body>
 </html>

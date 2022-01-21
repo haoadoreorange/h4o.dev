@@ -24,4 +24,4 @@ OUTPUT_PATH = 'output-publish/'
 # Following items are often useful when publishing
 
 DISQUS_SITENAME = 'haoadorescomtam'
-# GOOGLE_ANALYTICS = 'UA-25539054-1'
+GOOGLE_ANALYTICS = 'G-S4D80ZBMM9'
