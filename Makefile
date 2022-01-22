@@ -6,6 +6,7 @@ BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 OUTPUTPUBLISH=output-publish
+OUTPUTPUBLISHDIR=$(BASEDIR)/$(OUTPUTPUBLISH)
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 PUBLISHCONFLOCAL=$(BASEDIR)/publishconf.local.py
@@ -48,6 +49,9 @@ help:
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
 	
+clean:
+	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"; [ ! -d "$(OUTPUTPUBLISHDIR)" ] || rm -rf "$(OUTPUTPUBLISHDIR)"
+	
 sass:
 	"$(SASS)" $(SASSARGS)
 	
@@ -57,11 +61,8 @@ watch-scss:
 html: sass
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 	
-clean:
-	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
-
-regenerate:
-	"$(PELICAN)" -r "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+# regenerate:
+# 	"$(PELICAN)" -r "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
 serve:
 	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
@@ -90,5 +91,5 @@ html-publish-local: sass
 html-release: html-publish
 	"$(MINIFY)" -o . -r $(OUTPUTPUBLISH)
 
-
-.PHONY: html help clean regenerate serve serve-global devserver publish 
+.PHONY: help clean sass watch-sass html serve serve-global watch-pelican devserver watch-pelican-global devserver-global \
+		html-publish html-publish-local html-release
