@@ -8,7 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 PUBLISHCONFLOCAL=$(BASEDIR)/publishconf.local.py
-SASS=$(BASEDIR)/tools/dart-sass/sass
+SASS=$(BASEDIR)/tools/dart-sass/sass-linux-amd64
 SASSARGS=--no-source-map theme/static/sass/all.scss theme/static/css/all.css
 
 DEBUG ?= 0
@@ -45,13 +45,16 @@ help:
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
-
-html:
-	"$(SASS)" $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	
+sass:
+	"$(SASS)" $(SASSARGS)
 	
 watch-scss:
 	"$(SASS)" -w $(SASSARGS)
 
+html: sass
+	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
 
@@ -71,16 +74,16 @@ devserver:
 	make -j2 watch-scss watch-pelican
 	
 watch-pelican-global:
-	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -b 0.0.0.0
+	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -b $(SERVER)
 
 devserver-global:
 	make -j2 watch-scss watch-pelican-global
 
-publish:
-	"$(SASS)" $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
+html-publish: sass
+	"$(PELICAN)" "$(INPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 	
-publish-local:
-	"$(SASS)" $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -s "$(PUBLISHCONFLOCAL)" $(PELICANOPTS)	
+html-publish-local: sass
+	"$(PELICAN)" "$(INPUTDIR)" -s "$(PUBLISHCONFLOCAL)" $(PELICANOPTS)	
 
 
 .PHONY: html help clean regenerate serve serve-global devserver publish 
