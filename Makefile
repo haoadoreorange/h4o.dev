@@ -5,11 +5,13 @@ PELICANOPTS=
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
+OUTPUTPUBLISH=output-publish
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 PUBLISHCONFLOCAL=$(BASEDIR)/publishconf.local.py
 SASS=$(BASEDIR)/tools/dart-sass/sass-linux-amd64
 SASSARGS=--no-source-map theme/static/sass/all.scss theme/static/css/all.css
+MINIFY=$(BASEDIR)/tools/minify/minify-linux-amd64
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -84,6 +86,9 @@ html-publish: sass
 	
 html-publish-local: sass
 	"$(PELICAN)" "$(INPUTDIR)" -s "$(PUBLISHCONFLOCAL)" $(PELICANOPTS)	
+	
+html-release: html-publish
+	"$(MINIFY)" -o . -r $(OUTPUTPUBLISH)
 
 
 .PHONY: html help clean regenerate serve serve-global devserver publish 
