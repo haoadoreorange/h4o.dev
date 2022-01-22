@@ -8,6 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 PUBLISHCONFLOCAL=$(BASEDIR)/publishconf.local.py
+SASS=$(BASEDIR)/tools/dart-sass/sass
 SASSARGS=--no-source-map theme/static/sass/all.scss theme/static/css/all.css
 
 DEBUG ?= 0
@@ -46,10 +47,10 @@ help:
 	@echo '                                                                          '
 
 html:
-	sass $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	"$(SASS)" $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 	
 watch-scss:
-	sass -w $(SASSARGS)
+	"$(SASS)" -w $(SASSARGS)
 
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
@@ -76,10 +77,10 @@ devserver-global:
 	make -j2 watch-scss watch-pelican-global
 
 publish:
-	sass $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
+	"$(SASS)" $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 	
 publish-local:
-	sass $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -s "$(PUBLISHCONFLOCAL)" $(PELICANOPTS)	
+	"$(SASS)" $(SASSARGS) && "$(PELICAN)" "$(INPUTDIR)" -s "$(PUBLISHCONFLOCAL)" $(PELICANOPTS)	
 
 
 .PHONY: html help clean regenerate serve serve-global devserver publish 

@@ -145,6 +145,7 @@ JINJA_FILTERS = dict(
 
 PATH = 'content/'
 STATIC_PATHS = ['favicon.png']
+IGNORE_FILES = ['.#*', '*.scss']
 
 # Leave .html alone; I only use it for static attachments, not posts
 READERS = dict(html=None)
