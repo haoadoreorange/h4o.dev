@@ -871,7 +871,7 @@ a.photo {
         min-height: 128px;
         padding-left: 150px;
         border-bottom: 2px solid black;
-        background: url(/theme/images/avatar.png) no-repeat left / 150px;
+        background: url(/theme/images/avatar.png) no-repeat left calc(50% - 28px - 0.25em) / 150px;
         /* lol css */
         image-rendering: -moz-crisp-edges; /* fx */
         image-rendering: pixelated; /* chrome, and the thing i actually mean */
@@ -890,6 +890,19 @@ a.photo {
 
         p {
             margin: 1em;
+        }
+        
+        .bmc {
+            position: relative;
+            left: -75px;
+            display: block;
+            margin: auto;
+            margin-bottom: 0.5em;
+            // max-width hardcoded here because inline-block bugged parent width on firefox
+            max-width: 262px;
+            @include phone-size {
+                position: static;
+            }
         }
     }
 

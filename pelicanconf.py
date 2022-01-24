@@ -106,20 +106,20 @@ SOCIAL_EX = ((
     '#cc181e', 'logo-youtube.png',
     "not sure what to upload there yet",
 ), (
-    'buy me a coffee',
+    'milkshake me',
     'https://www.buymeacoffee.com/haoadoresorange',
-    '#FF813F', 'logo-buymeacoffee.png',
+    '#FF76AC', 'logo-buymeacoffee.png',
     "help feed me",
-), (
+# ), (
 #     'square',
 #     'https://cash.me/$eevee',
 #     '#29c501', 'logo-square-cash.png',
 #     "just give me money?",
 # ), (
-    'paypal',
-    'https://www.paypal.me/haoadoresorange',
-    '#24397C', 'logo-paypal.png',
-    "wanna give me money more money ?",
+    # 'paypal',
+    # 'https://www.paypal.me/haoadoresorange',
+    # '#24397C', 'logo-paypal.png',
+    # "wanna give me money more money ?",
 ))
 
 DEFAULT_PAGINATION = 10
