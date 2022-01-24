@@ -68,12 +68,12 @@ LINKS_EX = ((
 SOCIAL_EX = ((
     'github',
     'https://github.com/haoadoresorange',
-    '#4183c4', 'logo-github.png',
+    '#404247', 'logo-github.png',
     "hacking the gibson",
 ), ( 
     'email',
     'mailto:haoadores@comtam.dev',
-    '#9966cc', 'logo-email.png',
+    '#32A352', 'logo-email.png',
     "email is here to stay",
 ), (
     'twitter',
@@ -118,7 +118,7 @@ SOCIAL_EX = ((
 # ), (
     'paypal',
     'https://www.paypal.me/haoadoresorange',
-    '#009cde', 'logo-paypal.png',
+    '#24397C', 'logo-paypal.png',
     "wanna give me money more money ?",
 ))
 

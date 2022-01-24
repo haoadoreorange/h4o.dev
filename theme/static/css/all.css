@@ -1,16 +1,41 @@
 @charset "UTF-8";
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0 0 0.5em;
   font-family: Lusitana, serif;
   text-align: left;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
   text-decoration: none;
 }
-h1 a, h1 a:visited, h2 a, h2 a:visited, h3 a, h3 a:visited, h4 a, h4 a:visited, h5 a, h5 a:visited, h6 a, h6 a:visited {
+h1 a, h1 a:visited,
+h2 a,
+h2 a:visited,
+h3 a,
+h3 a:visited,
+h4 a,
+h4 a:visited,
+h5 a,
+h5 a:visited,
+h6 a,
+h6 a:visited {
   color: inherit;
 }
-h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
   text-decoration: underline;
   color: #cf4078;
 }
@@ -31,14 +56,15 @@ h4 {
   font-size: 1.25em;
 }
 
-p, li {
+p,
+li {
   margin-bottom: 1em;
   line-height: 1.5;
 }
 
 a {
   transition: color 0.1s linear;
-  color: #4078CF;
+  color: #4078cf;
 }
 a:visited {
   color: #9740cf;
@@ -64,7 +90,7 @@ body > header {
   position: relative;
   margin: 1em 0 0;
   min-height: 128px;
-  background: url(/theme/images/home-eevee2.png) no-repeat left 1rem bottom/96px;
+  background: url(/theme/images/avatar.png) no-repeat left 1rem bottom/96px;
   /* lol css */
   image-rendering: -moz-crisp-edges;
   /* fx */
@@ -77,7 +103,7 @@ body > header {
   body > header {
     margin-top: 1em;
     min-height: auto;
-    background: url(/theme/images/home-eevee2.png) no-repeat left 0.5rem bottom/76px;
+    background: url(/theme/images/avatar.png) no-repeat left 0.5rem bottom/76px;
   }
 }
 body > header h1 {
@@ -119,7 +145,8 @@ body > header nav .subscription {
 body > header nav form {
   margin: 0.5em 0;
 }
-body > header nav ul, body > header nav ol {
+body > header nav ul,
+body > header nav ol {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -134,13 +161,14 @@ body > header nav a, body > header nav a:visited, body > header nav a:hover {
 body > header nav a:hover {
   background: #2d3d53;
 }
-body > header nav img, body > header nav input {
+body > header nav img,
+body > header nav input {
   vertical-align: middle;
 }
 
 body > #main {
   display: flex;
-  border: 1px solid #6B5337;
+  border: 1px solid #6b5337;
 }
 body > #main #content {
   flex: 1;
@@ -287,10 +315,12 @@ body > footer img {
 #sidebar h1 {
   font-size: 1.5em;
 }
-#sidebar h1, #sidebar a {
+#sidebar h1,
+#sidebar a {
   text-shadow: 1px 1px 0 #fcfcf7;
 }
-#sidebar ul, #sidebar ol {
+#sidebar ul,
+#sidebar ol {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -345,7 +375,8 @@ body > footer img {
   font-size: 0.9em;
   color: #808080;
 }
-#sidebar .eevee-navigation > li > a .-label h2, #sidebar .eevee-navigation > li > a .-label p {
+#sidebar .eevee-navigation > li > a .-label h2,
+#sidebar .eevee-navigation > li > a .-label p {
   margin: 0;
   line-height: 1.1;
 }
@@ -385,17 +416,20 @@ body > footer img {
   white-space: nowrap;
 }
 
-article, #content section {
+article,
+#content section {
   padding: 2.5em 3em;
   font-family: Merriweather, serif;
 }
 @media (max-width: 900px) {
-  article, #content section {
+  article,
+#content section {
     padding: 2em;
   }
 }
 @media (max-width: 414px) {
-  article, #content section {
+  article,
+#content section {
     padding: 1em;
   }
 }
@@ -451,13 +485,16 @@ article > footer a[rel=full-article]:hover {
   border-color: #cab08f;
 }
 
-.gallery img, .entry-content img, .entry-content object {
+.gallery img, .entry-content img,
+.entry-content object {
   max-width: 100%;
   box-shadow: 0 1px 2px 1px #0009;
   outline: 1px solid #0009;
   transition: box-shadow linear 0.1s;
 }
-a:hover .gallery img, .gallery a:hover img, a:hover .entry-content img, .entry-content a:hover img, a:hover .entry-content object, .entry-content a:hover object {
+a:hover .gallery img, .gallery a:hover img, a:hover .entry-content img, .entry-content a:hover img,
+a:hover .entry-content object,
+.entry-content a:hover object {
   box-shadow: 0 1px 2px 1px #000c;
 }
 
@@ -632,7 +669,8 @@ a.photo {
   margin: 0 0 1em;
   text-align: center;
 }
-.prose-full-illustration img, .prose-full-illustration object {
+.prose-full-illustration img,
+.prose-full-illustration object {
   max-width: 100%;
 }
 
@@ -695,7 +733,7 @@ a.photo {
   min-height: 128px;
   padding-left: 150px;
   border-bottom: 2px solid black;
-  background: url(/theme/images/home-eevee2.png) no-repeat left/150px;
+  background: url(/theme/images/avatar.png) no-repeat left/150px;
   /* lol css */
   image-rendering: -moz-crisp-edges;
   /* fx */
@@ -709,7 +747,7 @@ a.photo {
     padding-left: unset;
     padding-top: 95px;
     text-align: center;
-    background: url(/theme/images/home-eevee2.png) no-repeat top/100px;
+    background: url(/theme/images/avatar.png) no-repeat top/100px;
   }
   .homepage .intro .intro-content {
     display: inline-block;
@@ -731,7 +769,8 @@ a.photo {
 .homepage a.button {
   color: white;
 }
-.homepage .button, .homepage .cool-button {
+.homepage .button,
+.homepage .cool-button {
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
 }
 .homepage .button {
@@ -1303,7 +1342,9 @@ code {
   background: none;
 }
 
-#colorbox, #cboxOverlay, #cboxWrapper {
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -1321,7 +1362,8 @@ code {
   height: 100%;
 }
 
-#cboxMiddleLeft, #cboxBottomLeft {
+#cboxMiddleLeft,
+#cboxBottomLeft {
   clear: left;
 }
 
@@ -1334,7 +1376,8 @@ code {
   margin: 0;
 }
 
-#cboxLoadingOverlay, #cboxLoadingGraphic {
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
   position: absolute;
   top: 0;
   left: 0;
@@ -1342,7 +1385,10 @@ code {
   height: 100%;
 }
 
-#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow {
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
   cursor: pointer;
 }
 
@@ -1364,7 +1410,9 @@ code {
   margin: 0;
 }
 
-#colorbox, #cboxContent, #cboxLoadedContent {
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
   box-sizing: content-box;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
@@ -1412,7 +1460,11 @@ code {
   background: white;
 }
 
-#cboxTitle, #cboxPrevious, #cboxNext, #cboxCurrent, #cboxClose {
+#cboxTitle,
+#cboxPrevious,
+#cboxNext,
+#cboxCurrent,
+#cboxClose {
   position: fixed;
 }
 
@@ -1442,7 +1494,9 @@ code {
   background: #0008;
 }
 
-#cboxTitle, #cboxPrevious, #cboxNext {
+#cboxTitle,
+#cboxPrevious,
+#cboxNext {
   text-align: center;
   background: #080808;
   color: #ddd;
@@ -1492,7 +1546,10 @@ code {
 }
 
 /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
-#cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {
+#cboxPrevious:active,
+#cboxNext:active,
+#cboxSlideshow:active,
+#cboxClose:active {
   outline: 0;
 }
 
@@ -1532,7 +1589,9 @@ code {
 .nes-css * {
   all: unset;
 }
-.nes-css *, .nes-css ::after, .nes-css ::before {
+.nes-css *,
+.nes-css ::after,
+.nes-css ::before {
   box-sizing: border-box;
 }
 .nes-css html {
@@ -1547,7 +1606,16 @@ code {
     width: device-width;
   }
 }
-.nes-css article, .nes-css aside, .nes-css figcaption, .nes-css figure, .nes-css footer, .nes-css header, .nes-css hgroup, .nes-css main, .nes-css nav, .nes-css section {
+.nes-css article,
+.nes-css aside,
+.nes-css figcaption,
+.nes-css figure,
+.nes-css footer,
+.nes-css header,
+.nes-css hgroup,
+.nes-css main,
+.nes-css nav,
+.nes-css section {
   display: block;
 }
 .nes-css body {
@@ -1568,7 +1636,12 @@ code {
   height: 0;
   overflow: visible;
 }
-.nes-css h1, .nes-css h2, .nes-css h3, .nes-css h4, .nes-css h5, .nes-css h6 {
+.nes-css h1,
+.nes-css h2,
+.nes-css h3,
+.nes-css h4,
+.nes-css h5,
+.nes-css h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -1576,7 +1649,8 @@ code {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-.nes-css abbr[data-original-title], .nes-css abbr[title] {
+.nes-css abbr[data-original-title],
+.nes-css abbr[title] {
   -webkit-text-decoration: underline dotted;
   text-decoration: underline;
   text-decoration: underline dotted;
@@ -1588,11 +1662,16 @@ code {
   font-style: normal;
   line-height: inherit;
 }
-.nes-css dl, .nes-css ol, .nes-css ul {
+.nes-css dl,
+.nes-css ol,
+.nes-css ul {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-.nes-css ol ol, .nes-css ol ul, .nes-css ul ol, .nes-css ul ul {
+.nes-css ol ol,
+.nes-css ol ul,
+.nes-css ul ol,
+.nes-css ul ul {
   margin-bottom: 0;
 }
 .nes-css dt {
@@ -1605,13 +1684,15 @@ code {
 .nes-css blockquote {
   margin: 0 0 1rem;
 }
-.nes-css b, .nes-css strong {
+.nes-css b,
+.nes-css strong {
   font-weight: bolder;
 }
 .nes-css small {
   font-size: 80%;
 }
-.nes-css sub, .nes-css sup {
+.nes-css sub,
+.nes-css sup {
   position: relative;
   font-size: 75%;
   line-height: 0;
@@ -1636,14 +1717,18 @@ code {
   color: inherit;
   text-decoration: none;
 }
-.nes-css a:not([href]):not([tabindex]):focus, .nes-css a:not([href]):not([tabindex]):hover {
+.nes-css a:not([href]):not([tabindex]):focus,
+.nes-css a:not([href]):not([tabindex]):hover {
   color: inherit;
   text-decoration: none;
 }
 .nes-css a:not([href]):not([tabindex]):focus {
   outline: 0;
 }
-.nes-css code, .nes-css kbd, .nes-css pre, .nes-css samp {
+.nes-css code,
+.nes-css kbd,
+.nes-css pre,
+.nes-css samp {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 1em;
 }
@@ -1684,22 +1769,34 @@ code {
 .nes-css button {
   border-radius: 0;
 }
-.nes-css button, .nes-css input, .nes-css optgroup, .nes-css select, .nes-css textarea {
+.nes-css button,
+.nes-css input,
+.nes-css optgroup,
+.nes-css select,
+.nes-css textarea {
   margin: 0;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
 }
-.nes-css button, .nes-css input {
+.nes-css button,
+.nes-css input {
   overflow: visible;
 }
-.nes-css button, .nes-css select {
+.nes-css button,
+.nes-css select {
   text-transform: none;
 }
-.nes-css [type=button], .nes-css [type=reset], .nes-css [type=submit], .nes-css button {
+.nes-css [type=button],
+.nes-css [type=reset],
+.nes-css [type=submit],
+.nes-css button {
   -webkit-appearance: button;
 }
-.nes-css [type=button]::-moz-focus-inner, .nes-css [type=reset]::-moz-focus-inner, .nes-css [type=submit]::-moz-focus-inner, .nes-css button::-moz-focus-inner {
+.nes-css [type=button]::-moz-focus-inner,
+.nes-css [type=reset]::-moz-focus-inner,
+.nes-css [type=submit]::-moz-focus-inner,
+.nes-css button::-moz-focus-inner {
   padding: 0;
   border-style: none;
 }
@@ -1707,11 +1804,15 @@ code {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
 }
-.nes-css input[type=checkbox], .nes-css input[type=radio] {
+.nes-css input[type=checkbox],
+.nes-css input[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
-.nes-css input[type=date], .nes-css input[type=datetime-local], .nes-css input[type=month], .nes-css input[type=time] {
+.nes-css input[type=date],
+.nes-css input[type=datetime-local],
+.nes-css input[type=month],
+.nes-css input[type=time] {
   -webkit-appearance: listbox;
 }
 .nes-css textarea {
@@ -1738,7 +1839,8 @@ code {
 .nes-css progress {
   vertical-align: baseline;
 }
-.nes-css [type=number]::-webkit-inner-spin-button, .nes-css [type=number]::-webkit-outer-spin-button {
+.nes-css [type=number]::-webkit-inner-spin-button,
+.nes-css [type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 .nes-css [type=search] {
@@ -1765,7 +1867,12 @@ code {
 .nes-css [hidden] {
   display: none !important;
 }
-.nes-css body, .nes-css code, .nes-css html, .nes-css kbd, .nes-css pre, .nes-css samp {
+.nes-css body,
+.nes-css code,
+.nes-css html,
+.nes-css kbd,
+.nes-css pre,
+.nes-css samp {
   font-family: "Press Start 2P";
 }
 .nes-css html {
@@ -1780,13 +1887,18 @@ code {
 .nes-css label {
   cursor: inherit;
 }
-.nes-css a, .nes-css button {
+.nes-css a,
+.nes-css button {
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
 }
-.nes-css [type=button], .nes-css [type=reset], .nes-css [type=submit], .nes-css button {
+.nes-css [type=button],
+.nes-css [type=reset],
+.nes-css [type=submit],
+.nes-css button {
   -webkit-appearance: none;
 }
-.nes-css input[type=checkbox], .nes-css input[type=radio] {
+.nes-css input[type=checkbox],
+.nes-css input[type=radio] {
   outline: 0;
 }
 @keyframes blink {
@@ -1797,7 +1909,20 @@ code {
     opacity: 0;
   }
 }
-.nes-css .nes-balloon, .nes-css .nes-balloon.is-dark, .nes-css .nes-btn, .nes-css .nes-container.is-rounded, .nes-css .nes-container.is-rounded.is-dark, .nes-css .nes-dialog.is-rounded, .nes-css .nes-dialog.is-rounded.is-dark, .nes-css .nes-input, .nes-css .nes-progress, .nes-css .nes-progress.is-rounded, .nes-css .nes-select select, .nes-css .nes-table.is-bordered, .nes-css .nes-table.is-dark.is-bordered, .nes-css .nes-textarea {
+.nes-css .nes-balloon,
+.nes-css .nes-balloon.is-dark,
+.nes-css .nes-btn,
+.nes-css .nes-container.is-rounded,
+.nes-css .nes-container.is-rounded.is-dark,
+.nes-css .nes-dialog.is-rounded,
+.nes-css .nes-dialog.is-rounded.is-dark,
+.nes-css .nes-input,
+.nes-css .nes-progress,
+.nes-css .nes-progress.is-rounded,
+.nes-css .nes-select select,
+.nes-css .nes-table.is-bordered,
+.nes-css .nes-table.is-dark.is-bordered,
+.nes-css .nes-textarea {
   border-style: solid;
   border-width: 4px;
 }
@@ -2157,7 +2282,8 @@ code {
 .nes-css .nes-balloon > :last-child {
   margin-bottom: 0;
 }
-.nes-css .nes-balloon::after, .nes-css .nes-balloon::before {
+.nes-css .nes-balloon::after,
+.nes-css .nes-balloon::before {
   position: absolute;
   content: "";
 }
@@ -2182,11 +2308,13 @@ code {
     border-image-repeat: stretch;
   }
 }
-.nes-css .nes-balloon.is-dark.from-left::before, .nes-css .nes-balloon.is-dark.from-right::before {
+.nes-css .nes-balloon.is-dark.from-left::before,
+.nes-css .nes-balloon.is-dark.from-right::before {
   background-color: #212529;
   border-color: #fff;
 }
-.nes-css .nes-balloon.is-dark.from-left::after, .nes-css .nes-balloon.is-dark.from-right::after {
+.nes-css .nes-balloon.is-dark.from-left::after,
+.nes-css .nes-balloon.is-dark.from-right::after {
   color: #fff;
   background-color: #212529;
 }
@@ -2202,7 +2330,8 @@ code {
 .nes-css .nes-balloon.is-dark.from-right::after {
   box-shadow: -4px 0, 4px 0, 4px 4px #212529, 0 4px, 8px 4px, 4px 8px, 8px 8px;
 }
-.nes-css .nes-balloon.from-left::after, .nes-css .nes-balloon.from-left::before {
+.nes-css .nes-balloon.from-left::after,
+.nes-css .nes-balloon.from-left::before {
   left: 2rem;
 }
 .nes-css .nes-balloon.from-left::before {
@@ -2222,7 +2351,8 @@ code {
   background-color: #fff;
   box-shadow: -4px 0, 4px 0, -4px 4px #fff, 0 4px, -8px 4px, -4px 8px, -8px 8px;
 }
-.nes-css .nes-balloon.from-right::after, .nes-css .nes-balloon.from-right::before {
+.nes-css .nes-balloon.from-right::after,
+.nes-css .nes-balloon.from-right::before {
   right: 2rem;
 }
 .nes-css .nes-balloon.from-right::before {
@@ -2297,7 +2427,9 @@ code {
 .nes-css .nes-btn:focus {
   outline: 0;
 }
-.nes-css .nes-btn.is-disabled, .nes-css .nes-btn.is-disabled:focus, .nes-css .nes-btn.is-disabled:hover {
+.nes-css .nes-btn.is-disabled,
+.nes-css .nes-btn.is-disabled:focus,
+.nes-css .nes-btn.is-disabled:hover {
   color: #212529;
   cursor: not-allowed;
   background-color: #d3d3d3;
@@ -2528,10 +2660,12 @@ code {
   padding: 1.5rem 2rem;
   border-width: 4px;
 }
-.nes-css .nes-dialog::-webkit-backdrop, .nes-css .nes-dialog > .backdrop {
+.nes-css .nes-dialog::-webkit-backdrop,
+.nes-css .nes-dialog > .backdrop {
   background-color: rgba(0, 0, 0, 0.3);
 }
-.nes-css .nes-dialog::backdrop, .nes-css .nes-dialog > .backdrop {
+.nes-css .nes-dialog::backdrop,
+.nes-css .nes-dialog > .backdrop {
   background-color: rgba(0, 0, 0, 0.3);
 }
 .nes-css .nes-dialog > :last-child {
@@ -2760,7 +2894,8 @@ code {
 .nes-css .nes-table tr {
   margin-left: -0.25em;
 }
-.nes-css .nes-table td, .nes-css .nes-table th {
+.nes-css .nes-table td,
+.nes-css .nes-table th {
   position: relative;
   padding: 0.5rem;
   word-wrap: break-word;
@@ -2768,10 +2903,14 @@ code {
   border-style: solid;
   border-width: 0 0.25em 0.25em 0;
 }
-.nes-css .nes-table td:last-child, .nes-css .nes-table th:last-child {
+.nes-css .nes-table td:last-child,
+.nes-css .nes-table th:last-child {
   border-right-width: 0;
 }
-.nes-css .nes-table td::after, .nes-css .nes-table td::before, .nes-css .nes-table th::after, .nes-css .nes-table th::before {
+.nes-css .nes-table td::after,
+.nes-css .nes-table td::before,
+.nes-css .nes-table th::after,
+.nes-css .nes-table th::before {
   position: absolute;
   display: block;
   width: 0.25em;
@@ -2779,15 +2918,18 @@ code {
   content: "";
   background-color: #212529;
 }
-.nes-css .nes-table td::after, .nes-css .nes-table th::after {
+.nes-css .nes-table td::after,
+.nes-css .nes-table th::after {
   bottom: -0.25em;
   left: -0.25em;
 }
-.nes-css .nes-table td::before, .nes-css .nes-table th::before {
+.nes-css .nes-table td::before,
+.nes-css .nes-table th::before {
   top: -0.25em;
   right: -0.25em;
 }
-.nes-css .nes-table td:last-child::before, .nes-css .nes-table th:last-child::before {
+.nes-css .nes-table td:last-child::before,
+.nes-css .nes-table th:last-child::before {
   top: initial;
   bottom: -0.25em;
 }
@@ -2843,16 +2985,30 @@ code {
     border-image-repeat: stretch;
   }
 }
-.nes-css .nes-table.is-dark td, .nes-css .nes-table.is-dark th {
+.nes-css .nes-table.is-dark td,
+.nes-css .nes-table.is-dark th {
   border-color: #fff;
 }
-.nes-css .nes-table.is-dark td::after, .nes-css .nes-table.is-dark td::before, .nes-css .nes-table.is-dark th::after, .nes-css .nes-table.is-dark th::before {
+.nes-css .nes-table.is-dark td::after,
+.nes-css .nes-table.is-dark td::before,
+.nes-css .nes-table.is-dark th::after,
+.nes-css .nes-table.is-dark th::before {
   display: none;
 }
-.nes-css .nes-table tbody tr:last-child td, .nes-css .nes-table tbody tr:last-child th, .nes-css .nes-table thead:last-child tr:last-child td, .nes-css .nes-table thead:last-child tr:last-child th {
+.nes-css .nes-table tbody tr:last-child td,
+.nes-css .nes-table tbody tr:last-child th,
+.nes-css .nes-table thead:last-child tr:last-child td,
+.nes-css .nes-table thead:last-child tr:last-child th {
   border-bottom-width: 0;
 }
-.nes-css .nes-table tbody tr:last-child td:first-child::after, .nes-css .nes-table tbody tr:last-child td:last-child::before, .nes-css .nes-table tbody tr:last-child th:first-child::after, .nes-css .nes-table tbody tr:last-child th:last-child::before, .nes-css .nes-table thead:last-child tr:last-child td:first-child::after, .nes-css .nes-table thead:last-child tr:last-child td:last-child::before, .nes-css .nes-table thead:last-child tr:last-child th:first-child::after, .nes-css .nes-table thead:last-child tr:last-child th:last-child::before {
+.nes-css .nes-table tbody tr:last-child td:first-child::after,
+.nes-css .nes-table tbody tr:last-child td:last-child::before,
+.nes-css .nes-table tbody tr:last-child th:first-child::after,
+.nes-css .nes-table tbody tr:last-child th:last-child::before,
+.nes-css .nes-table thead:last-child tr:last-child td:first-child::after,
+.nes-css .nes-table thead:last-child tr:last-child td:last-child::before,
+.nes-css .nes-table thead:last-child tr:last-child th:first-child::after,
+.nes-css .nes-table thead:last-child tr:last-child th:last-child::before {
   display: none;
 }
 .nes-css .nes-text.is-primary {
@@ -2870,7 +3026,8 @@ code {
 .nes-css .nes-text.is-disabled {
   color: #d3d3d3;
 }
-.nes-css .nes-input, .nes-css .nes-textarea {
+.nes-css .nes-input,
+.nes-css .nes-textarea {
   border-image-slice: 2;
   border-image-width: 2;
   border-image-repeat: stretch;
@@ -2882,37 +3039,44 @@ code {
   background-clip: padding-box;
 }
 @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
-  .nes-css .nes-input, .nes-css .nes-textarea {
+  .nes-css .nes-input,
+.nes-css .nes-textarea {
     border-image-repeat: space;
   }
 }
 @supports (-moz-appearance: meterbar) {
-  .nes-css .nes-input, .nes-css .nes-textarea {
+  .nes-css .nes-input,
+.nes-css .nes-textarea {
     border-image-repeat: stretch;
   }
 }
-.nes-css .nes-input.is-dark, .nes-css .nes-textarea.is-dark {
+.nes-css .nes-input.is-dark,
+.nes-css .nes-textarea.is-dark {
   border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(255,255,255)" /></svg>');
   outline-color: #e7e7e7;
   color: #fff;
   background-color: #212529;
 }
-.nes-css .nes-input.is-success, .nes-css .nes-textarea.is-success {
+.nes-css .nes-input.is-success,
+.nes-css .nes-textarea.is-success {
   border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(146,204,65)" /></svg>');
   outline-color: #76c442;
 }
-.nes-css .nes-input.is-warning, .nes-css .nes-textarea.is-warning {
+.nes-css .nes-input.is-warning,
+.nes-css .nes-textarea.is-warning {
   border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(247,213,29)" /></svg>');
   outline-color: #f2c409;
 }
-.nes-css .nes-input.is-error, .nes-css .nes-textarea.is-error {
+.nes-css .nes-input.is-error,
+.nes-css .nes-textarea.is-error {
   border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(231,110,85)" /></svg>');
   outline-color: #ce372b;
 }
 .nes-css .nes-field > label {
   display: block;
 }
-.nes-css .nes-field .nes-input, .nes-css .nes-field .nes-textarea {
+.nes-css .nes-field .nes-input,
+.nes-css .nes-field .nes-textarea {
   display: block;
 }
 .nes-css .nes-field.is-inline {
@@ -2926,7 +3090,8 @@ code {
   margin-right: 1.5rem;
   text-align: right;
 }
-.nes-css .nes-field.is-inline .nes-input, .nes-css .nes-field.is-inline .nes-textarea {
+.nes-css .nes-field.is-inline .nes-input,
+.nes-css .nes-field.is-inline .nes-textarea {
   flex-basis: 0;
   flex-grow: 5;
 }
@@ -2976,7 +3141,8 @@ code {
     box-shadow: 2px 2px 0 0.02em, 4px 2px 0 0.02em, 2px 4px 0 0.02em, 4px 4px 0 0.02em, 6px 4px 0 0.02em, 8px 4px 0 0.02em, 2px 6px 0 0.02em, 4px 6px 0 0.02em, 6px 6px 0 0.02em, 8px 6px 0 0.02em, 10px 6px 0 0.02em, 2px 8px 0 0.02em, 4px 8px 0 0.02em, 6px 8px 0 0.02em, 8px 8px 0 0.02em, 10px 8px 0 0.02em, 12px 8px 0 0.02em, 2px 10px 0 0.02em, 4px 10px 0 0.02em, 6px 10px 0 0.02em, 8px 10px 0 0.02em, 10px 10px 0 0.02em, 2px 12px 0 0.02em, 4px 12px 0 0.02em, 6px 12px 0 0.02em, 8px 12px 0 0.02em, 2px 14px 0 0.02em, 4px 14px 0 0.02em;
   }
 }
-.nes-css .nes-radio:checked:focus + span::before, .nes-css .nes-radio:checked:hover + span::before {
+.nes-css .nes-radio:checked:focus + span::before,
+.nes-css .nes-radio:checked:hover + span::before {
   animation: blink 1s infinite steps(1);
 }
 .nes-css .nes-radio:checked:focus + span::before {
@@ -3039,7 +3205,8 @@ code {
   position: relative;
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
 }
-.nes-css .nes-checkbox + span::before, .nes-css .nes-checkbox:checked + span::before {
+.nes-css .nes-checkbox + span::before,
+.nes-css .nes-checkbox:checked + span::before {
   position: absolute;
   top: -3px;
   left: -28px;
