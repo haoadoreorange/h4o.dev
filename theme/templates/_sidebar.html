@@ -55,9 +55,7 @@
         <h1><a href="{{ SITEURL }}/{{ TAGS_URL }}">Tags</a></h1>
         <div class="sidebar-tags">
         {% for tag, articles in tags | sort %}
-        {% if articles | length > 1 %}
             <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-        {% endif %}
         {% endfor %}
         </div>
     </section>

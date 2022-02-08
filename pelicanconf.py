@@ -97,16 +97,16 @@ SOCIAL_EX = ((
 #     "indie games",
 # ), (
     'twitch',
-    'https://twitch.tv/lucd',
+    'https://twitch.tv/lucd419',
     '#6441a4', 'logo-twitch.png',
     "occasional game streams",
 ), (
     'youtube',
-    'https://www.youtube.com/channel/UCErd6zzmLJ-U1ReFrle3kBQ',
+    'https://www.youtube.com/channel/UCxtU6-gDsIYxUAR5LfCbA9g',
     '#cc181e', 'logo-youtube.png',
     "not sure what to upload there yet",
 ), (
-    'milkshake me',
+    'buymeacoffee',
     'https://www.buymeacoffee.com/haoadoresorange',
     '#FF76AC', 'logo-buymeacoffee.png',
     "help feed me",
@@ -144,7 +144,7 @@ JINJA_FILTERS = dict(
 )
 
 PATH = 'content/'
-STATIC_PATHS = ['favicon.png']
+# STATIC_PATHS = ['favicon.png']
 IGNORE_FILES = ['.#*', '*.scss']
 
 # Leave .html alone; I only use it for static attachments, not posts
