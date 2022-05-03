@@ -3,7 +3,7 @@
 
 {% block twitter_card %}
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@haoadoresorange">
+<meta name="twitter:site" content="@haoadoreorange">
 <meta name="og:type" content="website">
 <meta name="og:title" content="{{ SITENAME }}">
 <meta name="og:description" content="Roses are red, computers are blue, I'm just hao">
@@ -14,27 +14,30 @@
 <main class="homepage">
     <div class="intro">
         <div class="intro-content">
-            <p>Hello there ! It's Hao, short for Hao Adores Orange, or Hao Adores Oyster, or anything you like (;</p>
-            <p>Software dev, Potterhead, nonsense thinker, who adores cơm tấm with passion.</p>
-            <p>Here you'll find stuffs I made/wrote, a list of my favorite cơm tấm address, and some other random things.</p>
-            <p>If you enjoy it, <a href="https://www.buymeacoffee.com/haoadoresorange">feed me cơm tấm</a> so you can keep
-                watching me do things I love &lt;3</p>
-            <p>Feel free to reach out for anything, or for nothing at all (^.&lt;)</p>
+            <p>Hello there ! It's H4O aka Hao 😛</p>
+            <p>Software guy, Potterhead, I spend way too much time on useless thoughts.</p>
+            <p>Here you'll find stuffs I made/wrote, I might upload some random things.</p>
+            <p>If you enjoy it, <a href="https://www.buymeacoffee.com/h4o_">feed me</a>,
+                so you can keep watching me do things I love &lt;3</p>
+            <p>Also, I wordplay with my name <a href="{{ SITEURL }}/blog/2022/05/03/what-does-h4o-mean">A LOT</a>
+                , check it out 🥲</p>
+            <p>Feel free to reach out for anything, or for nothing at all.</p>
         </div>
-    <a class="bmc" href="https://www.buymeacoffee.com/haoadoresorange">
-        <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a milkshake&emoji=&slug=haoadoresorange&button_colour=ff76ac&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00">
-    </a>
+        <a class="bmc" href="https://www.buymeacoffee.com/h4o_">
+            <img
+                src="https://img.buymeacoffee.com/button-api/?text=Buy me a milkshake&emoji=&slug=h4o_&button_colour=ff76ac&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00">
+        </a>
     </div>
 
     {% macro _render_button(title, url, color, image, desc) %}
-        <a href="{{ url }}" class="button" style="background-color: {{ color }};">
-            <img src="{{ SITEURL }}/theme/images/{{ image }}" alt="">
-            <label>{{ title }}</label>
-        </a>
+    <a href="{{ url }}" class="button" style="background-color: {{ color }};">
+        <img src="{{ SITEURL }}/theme/images/{{ image }}" alt="">
+        <label>{{ title }}</label>
+    </a>
     {% endmacro %}
     <div class="account-buttons">
-        {% for i in range(5) %}
-            {{ _render_button(*SOCIAL_EX[i]) }}
+        {% for i in range(1, 6) %}
+        {{ _render_button(*SOCIAL_EX[i]) }}
         {% endfor %}
     </div>
     <!-- <div class="account-buttons">
@@ -42,7 +45,7 @@
             {{ _render_button(*SOCIAL_EX[i]) }}
         {% endfor %}
     </div> -->
-    
+
     <h1>Writing</h1>
     <section class="tile-container">
         <section class="tile">
@@ -51,7 +54,8 @@
                     <h2>blog</h2>
                 </a>
             </header>
-            <p>I write about softwares, technical stuffs and various topics. I know it's sleepy reading long text, so I'm trying my
+            <p>I write about softwares, technical stuffs and various topics. I know it's sleepy reading long text, so
+                I'm trying my
                 best to keep short.</p>
         </section>
         <section class="tile">
@@ -60,7 +64,8 @@
                     <h2>dev log</h2>
                 </a>
             </header>
-            <p>Every couple days, I tend to write up what I've been working on.  It helps me see how much I'm getting done.</p>
+            <p>Every couple days, I tend to write up what I've been working on. It helps me see how much I'm getting
+                done.</p>
         </section>
         <section class="tile">
             <header>
@@ -68,16 +73,18 @@
                     <h2>cơm tấm</h2>
                 </a>
             </header>
-            <p>A traditional rice dish in Saigon. I live and breath it (actually this sounds suck), definitely will die peacefully
+            <p>A traditional rice dish in Saigon. I live and breath it (actually this sounds suck), definitely will die
+                peacefully
                 with a dish of cơm tấm on my elderly bed.</p>
         </section>
     </section>
-    
+
     <h1>Libraries & Frameworks (JS/TS)</h1>
     <section class="tile-container">
         <section class="tile">
             <header>
-                <a href="https://github.com/haoadoresorange/when-json-met-bigint" class="cool-button" style="background-color: #27609E;">
+                <a href="https://github.com/haoadoreorange/when-json-met-bigint" class="cool-button"
+                    style="background-color: #27609E;">
                     <time datetime="2021-12">2021-12</time>
                     <h2>when-json-met-bigint</h2>
                 </a>
@@ -87,7 +94,8 @@
         </section>
         <section class="tile">
             <header>
-                <a href="https://github.com/haoadoresorange/ts-trace-event" class="cool-button" style="background-color: #7A8020;">
+                <a href="https://github.com/haoadoreorange/ts-trace-event" class="cool-button"
+                    style="background-color: #7A8020;">
                     <time datetime="2021-11">2021-11</time>
                     <h2>ts-trace-event</h2>
                 </a>
@@ -96,12 +104,14 @@
         </section>
         <section class="tile">
             <header>
-                <a href="https://github.com/haoadoresorange/postalien" class="cool-button" style="background-color: #AC5600;">
+                <a href="https://github.com/haoadoreorange/postalien" class="cool-button"
+                    style="background-color: #AC5600;">
                     <time datetime="2021-11">2021-11</time>
                     <h2>postalien</h2>
                 </a>
             </header>
-            <p>Basically I wanted to call postman with JS/TS lib, so this is it. A tiny-framework to create postman-like cli.</p>
+            <p>Basically I wanted to call postman with JS/TS lib, so this is it. A tiny-framework to create postman-like
+                cli.</p>
         </section>
     </section>
 

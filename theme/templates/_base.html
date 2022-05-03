@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
@@ -7,15 +8,15 @@
 
     {% if FEED_ATOM %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate"
-            title="{{ SITENAME }} Atom Feed">
+        title="{{ SITENAME }} Atom Feed">
     {% endif %}
     {% if FEED_RSS %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate"
-            title="{{ SITENAME }} RSS Feed">
+        title="{{ SITENAME }} RSS Feed">
     {% endif %}
 
     {% if EXTRA_HEADER %}
-        {{ EXTRA_HEADER }}
+    {{ EXTRA_HEADER }}
     {% endif %}
 
     <!-- http://t.co/dKP3o1e -->
@@ -26,13 +27,14 @@
     <link href="{{ SITEURL }}/theme/images/avatar.png" rel="icon">
     <link href="{{ SITEURL }}/theme/css/all.css" media="screen, projection" rel="stylesheet" type="text/css">
 
-    <link href="https://fonts.googleapis.com/css?family=Lusitana:400,700|Merriweather:400,700,400italic,700italic|Source+Sans+Pro:400,700|Source+Code+Pro:400,700|Love+Ya+Like+A+Sister&subset=latin,latin-ext"
+    <link
+        href="https://fonts.googleapis.com/css?family=Lusitana:400,700|Merriweather:400,700,400italic,700italic|Source+Sans+Pro:400,700|Source+Code+Pro:400,700|Love+Ya+Like+A+Sister&subset=latin,latin-ext"
         rel="stylesheet" type="text/css">
     {% if article and article.latex %}
-        {{ article.latex }}
+    {{ article.latex }}
     {% endif %}
     {% if page and page.latex %}
-        {{ page.latex }}
+    {{ page.latex }}
     {% endif %}
 
     {# twitter card stuff #}
@@ -50,22 +52,22 @@
     <meta name="twitter:card" content="summary">
     <meta name="og:image" content="{{ SITEURL }}/theme/images/avatar.png">
     {% endif %}
-    <meta name="twitter:site" content="@haoadoresorange">
+    <meta name="twitter:site" content="@haoadoreorange">
     <meta name="og:title" content="{{ article.title | striptags }}">
     <meta name="og:description" content="{{ article.summary[:200] | striptags }}">
     {% endif %}
     {% endblock %}
-    
-    {% if GOOGLE_ANALYTICS %}
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS }}"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
 
-            gtag('config', '{{ GOOGLE_ANALYTICS }}');
-        </script>
+    {% if GOOGLE_ANALYTICS %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', '{{ GOOGLE_ANALYTICS }}');
+    </script>
     {% endif %}
 </head>
 
@@ -80,40 +82,49 @@
             margin: 1em;
             margin-top: 2.3em;
         }
+
         .nes-css .nes-field {
             display: flex;
             flex-direction: column;
             align-items: center;
             font-size: 89%;
         }
+
         #subscribe-label {
             text-align: center;
         }
+
         #subscribe-form {
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
         }
+
         #subscribe-form input {
             background: wheat;
             color: black;
             margin-bottom: 0.5rem;
         }
+
         @media (min-width: 1024px) {
             #subscribe-label {
                 font-size: 120%;
             }
+
             #subscribe-form {
                 box-sizing: border-box;
                 width: 70%;
             }
+
             :root {
                 --button-width: 11.5em;
             }
+
             #subscribe-form input {
                 width: calc(100% - var(--button-width));
                 padding-right: var(--button-width);
             }
+
             #subscribe-form button {
                 align-self: center;
                 font-size: 75%;
@@ -124,44 +135,46 @@
         }
     </style>
     <div class="nes-css">
-        <form action="https://dev.us20.list-manage.com/subscribe/post?u=60c5be8409cd054ef651f5556&amp;id=67ea7a26df" method="post" target="_blank" novalidate>
+        <form action="https://dev.us20.list-manage.com/subscribe/post?u=60c5be8409cd054ef651f5556&amp;id=67ea7a26df"
+            method="post" target="_blank" novalidate>
             <div class="nes-field">
                 <label for="mce-EMAIL" id="subscribe-label">Keeping up with the Haos</label>
                 <div id="subscribe-form">
-                    <input type="email" name="EMAIL" id="mce-EMAIL" class="nes-input is-success" placeholder="haoadores@comtam.dev" required>
+                    <input type="email" name="EMAIL" id="mce-EMAIL" class="nes-input is-success"
+                        placeholder="www@h4o.dev" required>
                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_60c5be8409cd054ef651f5556_67ea7a26df" tabindex="-1" value=""></div>
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                            name="b_60c5be8409cd054ef651f5556_67ea7a26df" tabindex="-1" value=""></div>
                     <button class="nes-btn is-primary">subscribe</button>
                 </div>
             </div>
         </form>
     </div>
-    
+
     <footer role="contentinfo">
         <div style="display: block;">
-        <p>
-            © 2022 haoadoresorange
-            ·
-            <a rel="license" href="https://creativecommons.org/licenses/by/3.0/us/">
-                <img
-                    title="Licensed under Creative Commons Attribution 3.0 United States"
-                    alt="Licensed under Creative Commons Attribution 3.0 United States"
-                    src="https://i.creativecommons.org/l/by/3.0/us/80x15.png">
-            </a>
-            ·
-            awesome theme by <a href="https://eev.ee/">Eevee</a>
-        </p>
-        <p>
-            © 
-            backgrounds from <a href="https://www.toptal.com/designers/subtlepatterns/">Subtle Patterns</a>
-            · 
-            pinky piggy by <a href="https://openclipart.org/detail/295143/feed-the-pig">cactus cowboy</a>
-        </p>
+            <p>
+                © 2022 haoadoreorange
+                ·
+                <a rel="license" href="https://creativecommons.org/licenses/by/3.0/us/">
+                    <img title="Licensed under Creative Commons Attribution 3.0 United States"
+                        alt="Licensed under Creative Commons Attribution 3.0 United States"
+                        src="https://i.creativecommons.org/l/by/3.0/us/80x15.png">
+                </a>
+                ·
+                awesome theme by <a href="https://eev.ee/">Eevee</a>
+            </p>
+            <p>
+                ©
+                backgrounds from <a href="https://www.toptal.com/designers/subtlepatterns/">Subtle Patterns</a>
+                ·
+                pinky piggy by <a href="https://openclipart.org/detail/295143/feed-the-pig">cactus cowboy</a>
+            </p>
         </div>
         <p>
             Powered by <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a>
             ·
-            <a href="https://github.com/haoadoresorange/haoadores.comtam.dev">source code</a>
+            <a href="https://github.com/haoadoreorange/h4o.dev">source code</a>
         </p>
     </footer>
 
@@ -177,4 +190,5 @@
     </script>
     {% endif %} -->
 </body>
+
 </html>

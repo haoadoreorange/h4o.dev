@@ -7,7 +7,7 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
-SITEURL = 'https://haoadores.comtam.dev'
+SITEURL = 'https://www.h4o.dev'
 # RELATIVE_URLS = True
 
 FEED_DOMAIN = SITEURL
@@ -24,5 +24,5 @@ OUTPUT_PATH = 'output-publish/'
 
 # Following items are often useful when publishing
 
-DISQUS_SITENAME = 'haoadorescomtam'
+DISQUS_SITENAME = 'h4odev'
 GOOGLE_ANALYTICS = 'G-S4D80ZBMM9'

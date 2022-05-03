@@ -1,7 +1,7 @@
 import os
 
-AUTHOR = 'haoadoresorange'
-SITENAME = "Inside com tam enthusiast's brain"
+AUTHOR = 'H4O'
+SITENAME = "Searching for oxygen |ʘ‿ʘ)╯"
 SITEURL = ''
 
 TIMEZONE = 'America/Montreal'
@@ -66,18 +66,23 @@ LINKS_EX = ((
 ))
 
 SOCIAL_EX = ((
+    'buymeacoffee',
+    'https://www.buymeacoffee.com/h4o_',
+    '#FF76AC', 'logo-buymeacoffee.png',
+    "help feed me",   
+), ( 
     'github',
-    'https://github.com/haoadoresorange',
+    'https://github.com/haoadoreorange',
     '#404247', 'logo-github.png',
     "hacking the gibson",
 ), ( 
     'email',
-    'mailto:haoadores@comtam.dev',
+    'mailto:www@h4o.dev',
     '#32A352', 'logo-email.png',
     "email is here to stay",
 ), (
     'twitter',
-    'https://twitter.com/haoadoresorange',
+    'https://twitter.com/haoadoreorange',
     '#55acee', 'logo-twitter.png',
     "a not so dumb social network",
 ), (
@@ -97,7 +102,7 @@ SOCIAL_EX = ((
 #     "indie games",
 # ), (
     'twitch',
-    'https://twitch.tv/lucd419',
+    'https://twitch.tv/h4oryu',
     '#6441a4', 'logo-twitch.png',
     "occasional game streams",
 ), (
@@ -105,11 +110,6 @@ SOCIAL_EX = ((
     'https://www.youtube.com/channel/UCxtU6-gDsIYxUAR5LfCbA9g',
     '#cc181e', 'logo-youtube.png',
     "not sure what to upload there yet",
-), (
-    'buymeacoffee',
-    'https://www.buymeacoffee.com/haoadoresorange',
-    '#FF76AC', 'logo-buymeacoffee.png',
-    "help feed me",
 # ), (
 #     'square',
 #     'https://cash.me/$eevee',
@@ -117,7 +117,7 @@ SOCIAL_EX = ((
 #     "just give me money?",
 # ), (
     # 'paypal',
-    # 'https://www.paypal.me/haoadoresorange',
+    # 'https://www.paypal.me/haoadoreorange',
     # '#24397C', 'logo-paypal.png',
     # "wanna give me money more money ?",
 ))

@@ -159,7 +159,7 @@ body > header nav a, body > header nav a:visited, body > header nav a:hover {
   color: #cfddf3;
 }
 body > header nav a:hover {
-  background: #2d3d53;
+  background: hsl(215deg, 30%, 25%);
 }
 body > header nav img,
 body > header nav input {
@@ -715,13 +715,13 @@ a.photo {
   text-shadow: 1px 1px 1px black;
 }
 .homepage a {
-  color: #a8beff;
+  color: hsl(225deg, 100%, 83%);
 }
 .homepage a:visited {
-  color: #cca8ff;
+  color: hsl(265deg, 100%, 83%);
 }
 .homepage a:hover {
-  color: #ffa8a8;
+  color: hsl(0deg, 100%, 83%);
 }
 .homepage code {
   background: none;
@@ -729,11 +729,12 @@ a.photo {
 .homepage .intro {
   font-size: 1.25em;
   margin: 0.5em;
+  margin-top: 1.3em;
   /* image is 64 x 48, shown double size (except on phones) */
   min-height: 128px;
-  padding-left: 150px;
+  padding-left: 180px;
   border-bottom: 2px solid black;
-  background: url(/theme/images/avatar.png) no-repeat left calc(50% - 28px - 0.25em)/150px;
+  background: url(/theme/images/avatar.png) no-repeat 2% calc(50% - 28px - 0.5em)/150px;
   /* lol css */
   image-rendering: -moz-crisp-edges;
   /* fx */
@@ -744,8 +745,9 @@ a.photo {
 }
 @media (max-width: 414px) {
   .homepage .intro {
-    padding-left: unset;
-    padding-top: 110px;
+    margin-top: revert;
+    padding-left: revert;
+    padding-top: calc(115px + 0.5em);
     text-align: center;
     background: url(/theme/images/avatar.png) no-repeat top/90px;
   }
@@ -755,19 +757,21 @@ a.photo {
   }
 }
 .homepage .intro p {
-  margin: 1em;
+  margin: 0.5em;
 }
 .homepage .intro .bmc {
   position: relative;
-  left: -75px;
+  left: -90px;
   display: block;
   margin: auto;
+  margin-top: 1em;
   margin-bottom: 0.5em;
   max-width: 262px;
 }
 @media (max-width: 414px) {
   .homepage .intro .bmc {
     position: static;
+    margin-top: revert;
   }
 }
 .homepage .account-buttons {
@@ -783,7 +787,8 @@ a.photo {
   color: white;
 }
 .homepage .button,
-.homepage .cool-button, .homepage .bmc {
+.homepage .cool-button,
+.homepage .bmc {
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
 }
 .homepage .button {
