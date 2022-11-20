@@ -14,6 +14,12 @@ SASS=$(BASEDIR)/tools/dart-sass/sass-linux-amd64
 SASSARGS=--no-source-map theme/static/sass/all.scss theme/static/css/all.css
 MINIFY=$(BASEDIR)/tools/minify/minify-linux-amd64
 
+SSH_HOST=
+SSH_PORT=
+SSH_USER=
+SSH_TARGET_DIR=
+include Makefile.secrets
+
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
 	PELICANOPTS += -D
@@ -91,5 +97,11 @@ html-publish-local: sass
 html-release: html-publish
 	"$(MINIFY)" -o . -r $(OUTPUTPUBLISH)
 
+ssh-upload: html-release
+	scp -P $(SSH_PORT) -r "$(OUTPUTPUBLISHDIR)"/* "$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)"
+
+rsync-upload: html-release
+	rsync -e "ssh -p $(SSH_PORT)" -P -rvzc --include tags --cvs-exclude --delete "$(OUTPUTPUBLISHDIR)"/ "$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)"
+
 .PHONY: help clean sass watch-sass html serve serve-global watch-pelican devserver watch-pelican-global devserver-global \
-		html-publish html-publish-local html-release
+		html-publish html-publish-local html-release ssh-upload rsync-upload
