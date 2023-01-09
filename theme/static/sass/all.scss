@@ -1517,6 +1517,15 @@ h6 + table.hilighttable {
     .il {
         color: #2aa198;
     } /* Literal.Number.Integer.Long */
+    
+    overflow: auto;
+    pre {
+        margin: 0 0 0 1.4em;
+        border-left: 1px solid #BBB;
+        padding: .7em;
+        font-family: sans-serif;
+        font-size: 14px;
+    }
 }
 
 // Also, inline code.

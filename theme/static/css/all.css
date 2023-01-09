@@ -1134,6 +1134,7 @@ h6 + table.hilighttable {
   /* Name.Variable.Global */
   /* Name.Variable.Instance */
   /* Literal.Number.Integer.Long */
+  overflow: auto;
 }
 .highlight .hll {
   background-color: #ffffcc;
@@ -1347,6 +1348,13 @@ h6 + table.hilighttable {
 }
 .highlight .il {
   color: #2aa198;
+}
+.highlight pre {
+  margin: 0 0 0 1.4em;
+  border-left: 1px solid #BBB;
+  padding: 0.7em;
+  font-family: sans-serif;
+  font-size: 14px;
 }
 
 code {

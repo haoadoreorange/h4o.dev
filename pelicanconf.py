@@ -65,11 +65,12 @@ LINKS_EX = ((
     "travel back in time",
 ))
 
+BUYMEACOFFEE = "haoadoreorange"
 SOCIAL_EX = ((
     'buymeacoffee',
-    'https://www.buymeacoffee.com/h4o_',
+    'https://www.buymeacoffee.com/' + BUYMEACOFFEE,
     '#FF76AC', 'logo-buymeacoffee.png',
-    "help feed me",   
+    "help feed me",
 ), ( 
     'github',
     'https://github.com/haoadoreorange',

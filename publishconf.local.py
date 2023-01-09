@@ -23,5 +23,5 @@ OUTPUT_PATH = 'output-publish/'
 
 # Following items are often useful when publishing
 
-DISQUS_SITENAME = 'h4odev'
-GOOGLE_ANALYTICS = 'G-S4D80ZBMM9'
+DISQUS_SITENAME = 'www-h4o-dev'
+GOOGLE_ANALYTICS = 'G-C2D34C982H'

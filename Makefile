@@ -101,7 +101,7 @@ ssh-upload: html-release
 	scp -P $(SSH_PORT) -r "$(OUTPUTPUBLISHDIR)"/* "$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)"
 
 rsync-upload: html-release
-	rsync -e "ssh -p $(SSH_PORT)" -P -rvzc --include tags --cvs-exclude --delete "$(OUTPUTPUBLISHDIR)"/ "$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)"
+	rsync -e "ssh -i $(SSH_ID) -p $(SSH_PORT)" -aPhhvzc --chown="$(SSH_USER)":"$(SSH_GROUP)" --chmod=2750 --include tags --cvs-exclude --delete "$(OUTPUTPUBLISHDIR)"/ "$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)"
 
 .PHONY: help clean sass watch-sass html serve serve-global watch-pelican devserver watch-pelican-global devserver-global \
 		html-publish html-publish-local html-release ssh-upload rsync-upload
