@@ -1,0 +1,61 @@
+{# Archive page - compact timeline grouped by year #}
+{% extends "base.html" %}
+
+{% block title %}Archive / {{ config.title }}{% endblock %}
+
+{% block content %}
+<section class="archive">
+    <h1>Archive</h1>
+
+    {% set blog = get_section(path="blog/_index.md") %}
+    {% set dlog = get_section(path="dlog/_index.md") %}
+    {% set comtam = get_section(path="comtam/_index.md") %}
+    {% set_global all_pages = [] %}
+    {% for page in blog.pages %}
+        {% set_global all_pages = all_pages | concat(with=page) %}
+    {% endfor %}
+    {% for page in dlog.pages %}
+        {% set_global all_pages = all_pages | concat(with=page) %}
+    {% endfor %}
+    {% for page in comtam.pages %}
+        {% set_global all_pages = all_pages | concat(with=page) %}
+    {% endfor %}
+    {% set all_pages = all_pages | sort(attribute="date") | reverse %}
+
+    {% set_global current_year = 0 %}
+    {% for page in all_pages %}
+        {% if not page.extra.hidden %}
+        {% set year = page.date | date(format="%Y") | int %}
+        {% if year != current_year %}
+            {% if current_year != 0 %}
+            <hr>
+            {% endif %}
+            <h2>{{ year }}</h2>
+            {% set_global current_year = year %}
+        {% endif %}
+
+    <article>
+        <time datetime="{{ page.date }}" pubdate>{{ page.date | date(format="%b %d") }}</time>
+        <h1{% if page.extra.category %} class="category-{{ page.extra.category }}"{% endif %}>
+            <a href="{{ page.permalink }}">
+                {{ macros::category_glyph(page=page) }}
+                {{ page.title }}
+            </a>
+        </h1>
+
+        <footer>
+            <ul class="meta">
+                {% if page.taxonomies.tags %}
+                <li class="tags">
+                    {% for tag in page.taxonomies.tags %}
+                    <a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">#{{ tag }}</a>
+                    {% endfor %}
+                </li>
+                {% endif %}
+            </ul>
+        </footer>
+    </article>
+        {% endif %}
+    {% endfor %}
+</section>
+{% endblock %}

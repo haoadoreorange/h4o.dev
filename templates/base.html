@@ -1,0 +1,154 @@
+{% import "macros.html" as macros %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ config.title }}{% endblock %}</title>
+    <meta name="author" content="{{ config.extra.author }}">
+
+    {% if config.generate_feeds_for %}
+    <link href="{{ config.base_url }}/feeds/atom.xml" type="application/atom+xml" rel="alternate"
+        title="{{ config.title }} Atom Feed">
+    <link href="{{ config.base_url }}/feeds/rss.xml" type="application/rss+xml" rel="alternate"
+        title="{{ config.title }} RSS Feed">
+    {% endif %}
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="{{ get_url(path='images/avatar.png') }}" rel="icon">
+    <link href="{{ get_url(path='all.css') }}" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Lusitana:400,700|Merriweather:400,700,400italic,700italic|Source+Sans+Pro:400,700|Source+Code+Pro:400,700|Love+Ya+Like+A+Sister&subset=latin,latin-ext"
+        rel="stylesheet" type="text/css">
+
+    {# twitter card / og tags #}
+    {% block twitter_card %}
+    {% if page %}
+    <meta name="og:type" content="article">
+    <meta name="og:article:published_time" content="{{ page.date }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="og:image" content="{{ get_url(path='images/avatar.png') }}">
+    <meta name="twitter:site" content="@haoadoreorange">
+    <meta name="og:title" content="{{ page.title }}">
+    {% if page.summary %}
+    <meta name="og:description" content="{{ page.summary | striptags | truncate(length=200) }}">
+    {% endif %}
+    {% endif %}
+    {% endblock %}
+
+    {% if config.extra.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.google_analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{{ config.extra.google_analytics }}');
+    </script>
+    {% endif %}
+</head>
+
+<body>
+    {% block entirebody %}
+    <header role="banner">
+        <h1><a href="{{ config.base_url }}/">{{ config.title }}</a></h1>
+    </header>
+    <div id="main">
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        {% include "sidebar.html" %}
+    </div>
+    {% endblock %}
+
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <style>
+        .nes-css {
+            font-family: 'Press Start 2P';
+            color: white;
+            display: block;
+            margin: 1em;
+            margin-top: 2.3em;
+        }
+        .nes-css .nes-field {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 89%;
+        }
+        #subscribe-label { text-align: center; }
+        #subscribe-form {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        #subscribe-form input {
+            background: wheat;
+            color: black;
+            margin-bottom: 0.5rem;
+        }
+        @media (min-width: 1024px) {
+            #subscribe-label { font-size: 120%; }
+            #subscribe-form { box-sizing: border-box; width: 70%; }
+            :root { --button-width: 11.5em; }
+            #subscribe-form input {
+                width: calc(100% - var(--button-width));
+                padding-right: var(--button-width);
+            }
+            #subscribe-form button {
+                align-self: center;
+                font-size: 75%;
+                width: var(--button-width);
+                margin-left: calc(0px - var(--button-width) - 8px);
+                margin-top: -0.1em;
+            }
+        }
+    </style>
+    <div class="nes-css">
+        <form action="https://dev.us17.list-manage.com/subscribe/post?u=daf96a0a2eafd17c04cf36895&amp;id=86ea4f869f&amp;f_id=00b35fe0f0"
+            method="post" target="_blank" novalidate>
+            <div class="nes-field">
+                <label for="mce-EMAIL" id="subscribe-label">Keeping up with the Haos</label>
+                <div id="subscribe-form">
+                    <input type="email" name="EMAIL" id="mce-EMAIL" class="nes-input is-success"
+                        placeholder="www@h4o.dev" required>
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                            name="b_daf96a0a2eafd17c04cf36895_86ea4f869f" tabindex="-1" value=""></div>
+                    <button class="nes-btn is-primary">subscribe</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer role="contentinfo">
+        <div style="display: block;">
+            <p>
+                © 2022 haoadoreorange
+                ·
+                <a rel="license" href="https://creativecommons.org/licenses/by/3.0/us/">
+                    <img title="Licensed under Creative Commons Attribution 3.0 United States"
+                        alt="Licensed under Creative Commons Attribution 3.0 United States"
+                        src="https://i.creativecommons.org/l/by/3.0/us/80x15.png">
+                </a>
+                ·
+                awesome theme by <a href="https://eev.ee/">Eevee</a>
+            </p>
+            <p>
+                ©
+                backgrounds from <a href="https://www.toptal.com/designers/subtlepatterns/">Subtle Patterns</a>
+                ·
+                pinky piggy by <a href="https://openclipart.org/detail/295143/feed-the-pig">cactus cowboy</a>
+            </p>
+        </div>
+        <p>
+            Powered by <a href="https://www.getzola.org/">Zola</a>
+            ·
+            <a href="https://github.com/haoadoreorange/h4o.dev">source code</a>
+        </p>
+    </footer>
+</body>
+
+</html>

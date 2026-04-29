@@ -1,0 +1,76 @@
+{# Article/page template - converted from Pelican article.html #}
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} / {{ config.title }}{% endblock %}
+
+{% block content %}
+    <article class="single" role="article">
+        <header>
+            <p class="meta">
+                <time datetime="{{ page.date }}" pubdate>{{ page.date | date(format="%B %d, %Y") }}</time>
+            </p>
+            <h1>
+                <a href="{{ page.permalink }}">
+                    {{ macros::category_glyph(page=page) }}
+                    {{ page.title }}
+                </a>
+            </h1>
+        </header>
+
+        <div class="entry-content">
+            {{ page.content | safe }}
+        </div>
+
+        <footer>
+            <ul class="meta">
+                <li class="byline author vcard">
+                    Posted by <span class="fn">{{ config.extra.author }}</span>
+                    {% set cat = page.path | split(pat="/") | nth(n=0) %}
+                    in <a class="category" href="/{{ cat }}">
+                        {{ macros::category_glyph(page=page) }}
+                        {{ cat }}</a>
+                </li>
+                <li><time datetime="{{ page.date }}" pubdate>{{ page.date | date(format="%B %d, %Y") }}</time></li>
+                {% if page.taxonomies.tags %}
+                <li class="tags">
+                    {% for tag in page.taxonomies.tags %}
+                    <a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">#{{ tag }}</a>
+                    {% endfor %}
+                </li>
+                {% endif %}
+            </ul>
+        </footer>
+    </article>
+
+    <section class="oh-wow-patreon">
+        <figure>
+            <a href="{{ config.extra.social[0].url }}"><img src="{{ get_url(path='images/eevee-patreon.png') }}" alt=""></a>
+        </figure>
+        <p>If you enjoy my 2 cents writing, you can fund future wordsmithing (and other endeavors) by <a href="{{ config.extra.social[0].url }}">throwing me a couple bucks</a> !</p>
+    </section>
+
+    {% if config.extra.disqus_sitename %}
+    <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread" aria-live="polite">
+            <noscript>
+                <p>Apologies, but part of running a static blog is that the comments are served by Disqus's JavaScript slurry.</p>
+            </noscript>
+        </div>
+        <script type="text/javascript">
+            var disqus_config = function() {
+                this.page.url = '{{ page.permalink }}';
+                this.page.title = '{{ page.title }}';
+            };
+            (function() {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//{{ config.extra.disqus_sitename }}.disqus.com/embed.js';
+                dsq.setAttribute('data-timestamp', +new Date());
+                (document.head || document.body).appendChild(dsq);
+            })();
+        </script>
+    </section>
+    {% endif %}
+{% endblock %}

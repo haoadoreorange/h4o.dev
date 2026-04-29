@@ -1,0 +1,34 @@
+{# Single tag page - converted from Pelican tag.html #}
+{% extends "base.html" %}
+
+{% block title %}🔖 {{ term.name }} / {{ config.title }}{% endblock %}
+
+{% block content %}
+    <h1>Tagged: {{ term.name }}</h1>
+
+    {% for page in term.pages %}
+    <article>
+        <header>
+            <p class="meta">
+                <time datetime="{{ page.date }}" pubdate>{{ page.date | date(format="%B %d, %Y") }}</time>
+            </p>
+            <h1>
+                <a href="{{ page.permalink }}">
+                    {{ macros::category_glyph(page=page) }}
+                    {{ page.title }}
+                </a>
+            </h1>
+        </header>
+
+        <div class="entry-content">
+            {{ page.summary | safe }}
+        </div>
+
+        {% if page.summary and page.content != page.summary %}
+        <footer>
+            <a rel="full-article" href="{{ page.permalink }}">📖 One more thing...</a>
+        </footer>
+        {% endif %}
+    </article>
+    {% endfor %}
+{% endblock %}

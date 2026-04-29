@@ -1,0 +1,66 @@
+{# Section template - converted from Pelican _article_list.html + category.html #}
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} / {{ config.title }}{% endblock %}
+
+{% block content %}
+    <h1>
+        {% if config.generate_feeds_for %}
+        <a href="{{ section.permalink }}feeds/atom.xml" rel="subscribe-atom" class="category-atom">
+            <img src="{{ get_url(path='images/feed-icon-28x28.png') }}" alt="Atom feed" title="Atom feed"></a>
+        {% endif %}
+        <img class="category-glyph" src="{{ get_url(path='images/category-' ~ section.title ~ '.png') }}"> {{ section.title }}
+    </h1>
+
+    {% if paginator %}
+    {% set pages = paginator.pages %}
+    {% else %}
+    {% set pages = section.pages %}
+    {% endif %}
+
+    {% for page in pages %}
+    {% if not page.extra.hidden %}
+    <article>
+        <header>
+            <p class="meta">
+                <time datetime="{{ page.date }}" pubdate>{{ page.date | date(format="%B %d, %Y") }}</time>
+            </p>
+            <h1>
+                <a href="{{ page.permalink }}">
+                    {{ page.title }}
+                </a>
+            </h1>
+        </header>
+
+        <div class="entry-content">
+            {{ page.summary | safe }}
+        </div>
+
+        {% if page.summary and page.content != page.summary %}
+        <footer>
+            <a rel="full-article" href="{{ page.permalink }}">📖 One more thing...</a>
+        </footer>
+        {% endif %}
+    </article>
+    {% endif %}
+    {% endfor %}
+
+    {# pagination #}
+    {% if paginator %}
+    <footer class="pagination">
+        {% if paginator.previous %}
+            <a class="prev" href="{{ paginator.previous }}">&larr; Newer</a>
+        {% else %}
+            <span class="prev"></span>
+        {% endif %}
+
+        <a href="/everything/archive">Blog archive</a>
+
+        {% if paginator.next %}
+            <a class="next" href="{{ paginator.next }}">Older &rarr;</a>
+        {% else %}
+            <span class="next"></span>
+        {% endif %}
+    </footer>
+    {% endif %}
+{% endblock %}

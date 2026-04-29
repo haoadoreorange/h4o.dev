@@ -1088,9 +1088,9 @@ a.photo {
 }
 
 // -----------------------------------------------------------------------------
-// ARCHIVES
+// ARCHIVE
 
-section.archives {
+section.archive {
     > h2,
     article h1,
     article time[pubdate] {
@@ -1524,7 +1524,7 @@ h6 + table.hilighttable {
     .il {
         color: #2aa198;
     } /* Literal.Number.Integer.Long */
-    
+
     overflow: auto;
     pre {
         margin: 0 0 0 1.4em;

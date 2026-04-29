@@ -42,8 +42,8 @@ image = "category-dlog.png"
 desc = "quick updates on what i'm doing lately"
 
 [[extra.links]]
-name = "archives"
-url = "/everything/archives"
+name = "archive"
+url = "/everything/archive"
 color = "#399ccd"
 image = "category-archives.png"
 desc = "travel back in time"

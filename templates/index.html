@@ -1,0 +1,108 @@
+{# Landing page - converted from Pelican home.html #}
+{% extends "base.html" %}
+
+{% block twitter_card %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@haoadoreorange">
+<meta name="og:type" content="website">
+<meta name="og:title" content="{{ config.title }}">
+<meta name="og:description" content="Roses are red, computers are blue, I'm just hao">
+<meta name="og:image" content="{{ get_url(path='images/avatar.png') }}">
+{% endblock %}
+
+{% block entirebody %}
+<main class="homepage">
+    <div class="intro">
+        <div class="intro-content">
+            <p>Hello there ! It's H4O aka Hao 😛</p>
+            <p>Software guy, Potterhead, I waste my time on useless thoughts. Here you'll find stuffs I
+                made/wrote, I might upload some random things.</p>
+            <p>Also, I wordplay with my name <a href="/blog/1997/03/31/what-does-h4o-mean">a little too much...</a>
+                , check it out 🥲</p>
+            <p>If you enjoy my blog, <a href="{{ config.extra.social[0].url }}">feed me</a>,
+                so you can keep watching me do things I love &lt;3 Feel free to reach out for anything, or for nothing
+                at all.</p>
+        </div>
+        <a class="bmc" href="{{ config.extra.social[0].url }}">
+            <img
+                src="https://img.buymeacoffee.com/button-api/?text=Buy me a milkshake&emoji=&slug={{ config.extra.buymeacoffee }}&button_colour=ff76ac&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00">
+        </a>
+    </div>
+
+    <div class="account-buttons">
+        {% for social in config.extra.social | slice(start=1, end=6) %}
+        <a href="{{ social.url }}" class="button" style="background-color: {{ social.color }};">
+            <img src="{{ get_url(path='images/' ~ social.image) }}" alt="">
+            <label>{{ social.name }}</label>
+        </a>
+        {% endfor %}
+    </div>
+
+    <h1>Writing</h1>
+    <section class="tile-container">
+        <section class="tile">
+            <header>
+                <a href="/blog" class="cool-button" style="background-color: #f6b441;">
+                    <h2>blog</h2>
+                </a>
+            </header>
+            <p>I write about softwares, technical stuffs and various topics. I know it's sleepy reading long text, so
+                I'm trying my best to keep short.</p>
+        </section>
+        <section class="tile">
+            <header>
+                <a href="/dlog" class="cool-button" style="background-color: #ee7300;">
+                    <h2>dev log</h2>
+                </a>
+            </header>
+            <p>Every couple days, I tend to write up what I've been working on. It helps me see how much I'm getting
+                done.</p>
+        </section>
+        <section class="tile">
+            <header>
+                <a href="/comtam" class="cool-button" style="background-color: #4a83c5;">
+                    <h2>cơm tấm</h2>
+                </a>
+            </header>
+            <p>A traditional rice dish in Saigon. I live and breath it (actually this sounds suck), definitely will die
+                peacefully with a dish of cơm tấm on my elderly bed.</p>
+        </section>
+    </section>
+
+    <h1>Libraries & Frameworks (JS/TS)</h1>
+    <section class="tile-container">
+        <section class="tile">
+            <header>
+                <a href="https://github.com/haoadoreorange/when-json-met-bigint" class="cool-button"
+                    style="background-color: #27609E;">
+                    <time datetime="2021-12">2021-12</time>
+                    <h2>when-json-met-bigint</h2>
+                </a>
+            </header>
+            <p>Replacement for JS default <b>JSON.parse/stringify</b> with <b>BigInt</b> support, written in TS. It
+                solved the consistency dilemma of <b>JSONB.parse(JSONB.stringify(o))</b> round trip.</p>
+        </section>
+        <section class="tile">
+            <header>
+                <a href="https://github.com/haoadoreorange/ts-trace-event" class="cool-button"
+                    style="background-color: #7A8020;">
+                    <time datetime="2021-11">2021-11</time>
+                    <h2>ts-trace-event</h2>
+                </a>
+            </header>
+            <p>Simple tracer written in TS that output Google's Trace Event format.</p>
+        </section>
+        <section class="tile">
+            <header>
+                <a href="https://github.com/haoadoreorange/postalien" class="cool-button"
+                    style="background-color: #AC5600;">
+                    <time datetime="2021-11">2021-11</time>
+                    <h2>postalien</h2>
+                </a>
+            </header>
+            <p>Basically I wanted to call postman with JS/TS lib, so this is it. A tiny-framework to create postman-like
+                cli.</p>
+        </section>
+    </section>
+</main>
+{% endblock %}

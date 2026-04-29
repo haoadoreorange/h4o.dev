@@ -1,0 +1,4 @@
+{% macro category_glyph(page) %}
+{% set cat = page.ancestors | nth(n=1) | replace(from="_index.md", to="") | replace(from="/", to="") %}
+<img class="category-glyph" src="{{ get_url(path='images/category-' ~ cat ~ '.png') }}" alt="[{{ cat }}]">
+{% endmacro %}
