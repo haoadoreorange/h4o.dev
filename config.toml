@@ -1,0 +1,99 @@
+base_url = "https://h4o.dev"
+title = "Searching for oxygen |ʘ‿ʘ)╯"
+description = "Roses are red, computers are blue, I'm just hao"
+default_language = "en"
+compile_sass = true
+minify_html = true
+build_search_index = true
+
+[slugify]
+paths_keep_dates = true
+
+[markdown.highlighting]
+theme = "github-dark"
+
+[extra]
+author = "H4O"
+buymeacoffee = "haoadoreorange"
+google_analytics = "G-C2D34C982H"
+disqus_sitename = "www-h4o-dev"
+
+# Navigation links (sidebar)
+# Each entry: [name, url, color, image, description]
+[[extra.links]]
+name = "everything"
+url = "/everything"
+color = "#c57be6"
+image = "category-everything.png"
+desc = "why chose when you can have it all"
+
+[[extra.links]]
+name = "blog"
+url = "/blog"
+color = "#f6b441"
+image = "category-blog.png"
+desc = "detailed, thoughtful prose about softwares and various subjects"
+
+[[extra.links]]
+name = "dlog"
+url = "/dlog"
+color = "#ee7300"
+image = "category-dlog.png"
+desc = "quick updates on what i'm doing lately"
+
+[[extra.links]]
+name = "archives"
+url = "/everything/archives"
+color = "#399ccd"
+image = "category-archives.png"
+desc = "travel back in time"
+
+# Social links
+[[extra.social]]
+name = "buymeacoffee"
+url = "https://www.buymeacoffee.com/haoadoreorange"
+color = "#FF76AC"
+image = "logo-buymeacoffee.png"
+desc = "help feed me"
+
+[[extra.social]]
+name = "github"
+url = "https://github.com/haoadoreorange"
+color = "#404247"
+image = "logo-github.png"
+desc = "hacking the gibson"
+
+[[extra.social]]
+name = "email"
+url = "mailto:www@h4o.dev"
+color = "#32A352"
+image = "logo-email.png"
+desc = "email is here to stay"
+
+[[extra.social]]
+name = "twitter"
+url = "https://twitter.com/haoadoreorange"
+color = "#55acee"
+image = "logo-twitter.png"
+desc = "a not so dumb social network"
+
+[[extra.social]]
+name = "twitch"
+url = "https://twitch.tv/h4oryu"
+color = "#6441a4"
+image = "logo-twitch.png"
+desc = "occasional game streams"
+
+[[extra.social]]
+name = "youtube"
+url = "https://www.youtube.com/channel/UCxtU6-gDsIYxUAR5LfCbA9g"
+color = "#cc181e"
+image = "logo-youtube.png"
+desc = "not sure what to upload there yet"
+
+[[taxonomies]]
+name = "tags"
+paginate_by = 10
+
+generate_feeds = true
+feed_filenames = ["atom.xml", "rss.xml"]

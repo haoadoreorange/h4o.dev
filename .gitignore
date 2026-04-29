@@ -1,5 +1,3 @@
-output/
-output-publish/
-__pycache__/
-*.secrets
+public/
+*.env
 .sig

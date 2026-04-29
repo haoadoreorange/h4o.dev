@@ -96,11 +96,11 @@ Once this is done, I am ready to configure my nginx server, since it has the req
 
 # Configure nginx & certbot
 
-In order for my nginx server to serve https, I need to request a certificate using `certbot` first. One thing noted here, because I'm setting up a 301 redirection between the `www` and `non-www` domain (i.e. [h4o.dev](https://h4o.dev) redirect to [www.h4o.dev](https://www.h4o.dev), using which one as the main domain is a [never-ending debate](https://duckduckgo.com/?t=ffab&q=www+vs+non-www&ia=web)), I need a certificate for **both** the `www` and `non-www` version. Otherwise, chrome will report a TLS error before the site can get redirected. For everything to work smoothly, I need to put 2 empty `server` block under the `http` block, each with their respective server_name in `/etc/nginx/nginx.conf`.
+In order for my nginx server to serve https, I need to request a certificate using `certbot` first. One thing noted here, because I'm setting up a 301 redirection between the `www` and `non-www` domain (i.e. [h4o.dev](https://h4o.dev) redirect to [h4o.dev](https://h4o.dev), using which one as the main domain is a [never-ending debate](https://duckduckgo.com/?t=ffab&q=www+vs+non-www&ia=web)), I need a certificate for **both** the `www` and `non-www` version. Otherwise, chrome will report a TLS error before the site can get redirected. For everything to work smoothly, I need to put 2 empty `server` block under the `http` block, each with their respective server_name in `/etc/nginx/nginx.conf`.
 
 ```sh
 server {
-    server_name www.h4o.dev
+    server_name h4o.dev
 }
 server {
     server_name h4o.dev
@@ -118,7 +118,7 @@ sudo certbot --nginx
 
 ```sh
 server {
-    server_name www.h4o.dev;
+    server_name h4o.dev;
 
     listen [::]:443 ssl; # managed by Certbot
     listen 443 ssl; # managed by Certbot
@@ -127,7 +127,7 @@ server {
     include ... # managed by Certbot
     ssl_dhparam ... # managed by Certbot
 
-    if ($host != www.h4o.dev) {
+    if ($host != h4o.dev) {
         return 404;
     }
 
@@ -141,7 +141,7 @@ server {
     listen [::]:443 ssl; # managed by Certbot
     listen 443 ssl; # managed by Certbot
 
-    return 301 $scheme://www.h4o.dev$request_uri;
+    return 301 $scheme://h4o.dev$request_uri;
 }
 server {
     listen [::]:80 default_server;
@@ -149,11 +149,11 @@ server {
     if ($host = h4o.dev) {
         return 301 https://www.$host$request_uri;
     } # managed by Certbot
-    if ($host = www.h4o.dev) {
+    if ($host = h4o.dev) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
     return 404; # managed by Certbot
 }
 ```
 
-In the `www.h4o.dev` server block, I use `root` entry to specify where my files are (the shared folder I created above), the `rewrite` is used to eliminate the trailing slash from the URL, and finally I use `try_files` to look for different files that can match the provided URL (as mentioned above, it looks for `URL/index.html` here). The `h4o.dev` & the http server block simply makes a 301 redirection.
+In the `h4o.dev` server block, I use `root` entry to specify where my files are (the shared folder I created above), the `rewrite` is used to eliminate the trailing slash from the URL, and finally I use `try_files` to look for different files that can match the provided URL (as mentioned above, it looks for `URL/index.html` here). The `h4o.dev` & the http server block simply makes a 301 redirection.
