@@ -1,11 +1,16 @@
-title: Build & host my blog with Pelican (part 0)
-tags: build, blog, pelican, python
++++
+title = "Build & host my blog with Pelican (part 0)"
+date = 2022-01-25
+
+[taxonomies]
+tags = ["build", "blog", "pelican", "python"]
++++
 
 I've been writing since a couple of years back, sort of a diary activity or sometimes just to take note what I learned. I posted some of it on Medium. But Medium is not for anything else but writing, and I make other stuffs too 😢
 
 Then there's WordPress, but I didn't need the dynamic nature, nor any database, it just seemed way overkill to host one. To be fair, I guess if it was a blog for my mom, maybe I'll use it.
 
-<!-- summary -->
+<!-- more -->
 
 # Why Pelican ?
 
@@ -19,26 +24,27 @@ What really tipped me off the edge is, although they provide you an all-in-one s
 
 I followed the installation doc and quick-start guide to get a first look inside a Pelican project. It was pretty easy using `pelican-quickstart` CLI and leaving most of the options as default. Before looking into any configurations, I tried to well understand the concepts and folder structure. On retrospect, it surely helped me to debug configurations whenever things go south.
 
-    :::sh
-    .
-    ├── content
-    │   └── post1.md
-    ├── Makefile
-    ├── output
-    │   ├── archives.html
-    │   ├── author
-    │   │   └── sic.html
-    │   ├── authors.html
-    │   ├── categories.html
-    │   ├── category
-    │   │   └── misc.html
-    │   ├── index.html
-    │   ├── post1.html
-    │   ├── tags.html
-    │   └── theme
-    ├── pelicanconf.py
-    ├── publishconf.py
-    └── tasks.py
+```sh
+.
+├── content
+│   └── post1.md
+├── Makefile
+├── output
+│   ├── archives.html
+│   ├── author
+│   │   └── sic.html
+│   ├── authors.html
+│   ├── categories.html
+│   ├── category
+│   │   └── misc.html
+│   ├── index.html
+│   ├── post1.html
+│   ├── tags.html
+│   └── theme
+├── pelicanconf.py
+├── publishconf.py
+└── tasks.py
+```
 
 An SSG basically takes what inside `content` and generate an `output` directory containing `.html` files for displaying the content in the browser, all the other files are for configurations and automation. The `content` directory is where I will put my blog articles written in `.md`, in each of which there's some metadata I need to specify, such as title, date, category...etc. I think Pelican supports several text file extensions, but I only use Markdown anyway.
 
@@ -56,8 +62,9 @@ The commonly referred as URL settings on Pelican documentation allows me to stru
 
 Next, I look at the `Date` metadata in each article. Sorting by date is doable on my blog, but what if I wanna sort it in my file system ? Writing the date in 2 places is cumbersome. Luckily, I can just put the date on the filename of my articles in `content` directory and tell Pelican to use it for metadata by using the option `FILENAME_METADATA`. Mine is
 
-    :::Python
-    '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
+```python
+'(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
+```
 
 Which is Regular Expression (Regex) saying that, take the first 3 strings separated by `-` as year, month, date, and whatever left as [slug](https://wordpress.com/go/business-website-guidance/what-is-a-slug/). The `Data` metadata format is flexible, but I highly recommend to use ISO format (YYYY-mm-dd) because it's not ambiguous, plus the filename can be sorted naturally by file systems.
 

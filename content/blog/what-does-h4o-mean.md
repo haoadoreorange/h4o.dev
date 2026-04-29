@@ -1,6 +1,10 @@
-title: What does H4O mean ?
-date: 1997-03-31
-status: hidden
++++
+title = "What does H4O mean ?"
+date = 1997-03-31
+
+[extra]
+hidden = true
++++
 
 First of all, H4O = HAO...
 

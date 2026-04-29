@@ -1,6 +1,11 @@
-title: Chapter 0: Alice in wonderland
-tags: philosophy
-status: hidden
++++
+title = "Chapter 0: Alice in wonderland"
+date = 2022-02-16
+draft = true
+
+[taxonomies]
+tags = ["philosophy"]
++++
 
 This mini-chapter isn't strictly necessary in regards to the reading of my
 philosophy. I included it because, as in any subject, it's important to know the
@@ -16,7 +21,7 @@ are countless conversations that couldn't be written down with my dear friends,
 whom I can never be grateful enough for putting their time to debate with me
 about nonsense subjects.
 
-<!-- summary -->
+<!-- more -->
 
 It was a someday afternoon in one of my primary school years, and every kids
 were chatting about the coming holiday. I think that was the first time we've

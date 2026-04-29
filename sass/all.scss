@@ -117,7 +117,7 @@ html {
     // This has to be on the root element for rem to work
     font-size: 16px;
 
-    background: url(/theme/images/concrete_seamless.png) $body-bg;
+    background: url(/images/concrete_seamless.png) $body-bg;
 }
 body {
     width: 100%;
@@ -132,7 +132,7 @@ body > header {
     position: relative;
     margin: 1em 0 0;
     min-height: 128px; // background height
-    background: url(/theme/images/avatar.png) no-repeat left 1rem bottom / 90px;
+    background: url(/images/avatar.png) no-repeat left 1rem bottom / 90px;
     /* lol css */
     image-rendering: -moz-crisp-edges; /* fx */
     image-rendering: pixelated; /* chrome, and the thing i actually mean */
@@ -141,7 +141,7 @@ body > header {
     @include phone-size {
         margin-top: 1em;
         min-height: auto;
-        background: url(/theme/images/avatar.png) no-repeat left 0.5rem bottom / 60px;
+        background: url(/images/avatar.png) no-repeat left 0.5rem bottom / 60px;
     }
 
     // main site title
@@ -233,11 +233,11 @@ body > #main {
         // the entire page expand.  This overrides that and allows overflow
         // mechanisms on children to work
         min-width: 0;
-        background: url(/theme/images/textured_paper.png) $main-bg;
+        background: url(/images/textured_paper.png) $main-bg;
     }
     #sidebar {
         width: 20em;
-        background: url(/theme/images/textured_paper.png) $sidebar-bg;
+        background: url(/images/textured_paper.png) $sidebar-bg;
     }
 
     @include tablet-size {
@@ -546,6 +546,12 @@ article {
         }
         h1 {
             flex: 1 1 auto;
+            &:not(:has(.category-glyph)) {
+                margin-top: 1em;
+            }
+            &:has(.category-glyph) {
+                margin-top: 0.25em;
+            }
         }
     }
 
@@ -658,7 +664,7 @@ article {
         --quip: "Note";
         --fg-color: #d0d0d0;
         --bg-color: unquote("#d0d0d020");
-        --image: url(/theme/images/asides/note.png);
+        --image: url(/images/asides/note.png);
     }
     aside p:last-child {
         margin-bottom: 0;
@@ -682,49 +688,49 @@ article {
         --quip: "Well, actually,";
         --fg-color: #d77bba;
         --bg-color: unquote("#d77bba20");
-        --image: url(/theme/images/asides/well-actually.png);
+        --image: url(/images/asides/well-actually.png);
     }
     aside.aside--note-from-future {
         --quip: "Note from the future";
         --fg-color: #5b6ee1;
         --bg-color: unquote("#5b6ee120");
-        --image: url(/theme/images/asides/note-from-the-future.png);
+        --image: url(/images/asides/note-from-the-future.png);
     }
     aside.aside--computers-are-bad {
         --quip: "Computers are bad";
         --fg-color: #ac3232;
         --bg-color: unquote("#ac323220");
-        --image: url(/theme/images/asides/computers-are-bad.png);
+        --image: url(/images/asides/computers-are-bad.png);
     }
     aside.aside--fascinating-tangent {
         --quip: "Fascinating tangent";
         --fg-color: #3f3f74;
         --bg-color: unquote("#3f3f7420");
-        --image: url(/theme/images/asides/fascinating-tangent.png);
+        --image: url(/images/asides/fascinating-tangent.png);
     }
     aside.aside--matter-of-taste {
         --quip: "A matter of taste";
         --fg-color: #76428a;
         --bg-color: unquote("#76428a20");
-        --image: url(/theme/images/asides/matter-of-taste.png);
+        --image: url(/images/asides/matter-of-taste.png);
     }
     aside.aside--look-out {
         --quip: "Look out!";
         --fg-color: #df7126;
         --bg-color: unquote("#df712620");
-        --image: url(/theme/images/asides/look-out.png);
+        --image: url(/images/asides/look-out.png);
     }
     aside.aside--tricky-tradeoff {
         --quip: "Tricky tradeoff";
         --fg-color: #45283c;
         --bg-color: unquote("#45283c20");
-        --image: url(/theme/images/asides/tricky-tradeoff.png);
+        --image: url(/images/asides/tricky-tradeoff.png);
     }
     aside.aside--deceptively-difficult {
         --quip: "Deceptively difficult";
         --fg-color: #4b692f;
         --bg-color: unquote("#4b692f20");
-        --image: url(/theme/images/asides/deceptively-difficult.png);
+        --image: url(/images/asides/deceptively-difficult.png);
     }
 }
 
@@ -768,6 +774,7 @@ a.photo {
 
 .category-glyph {
     max-height: 1.2em;
+    max-width: 1em;
     margin-right: 0.25em;
     vertical-align: -10%; // like baseline, but compensating for feet
 }
@@ -872,7 +879,7 @@ a.photo {
         min-height: 128px;
         padding-left: 180px;
         border-bottom: 2px solid black;
-        background: url(/theme/images/avatar.png) no-repeat 2% calc(50% - 28px - 0.5em) / 150px;
+        background: url(/images/avatar.png) no-repeat 2% calc(50% - 28px - 0.5em) / 150px;
         /* lol css */
         image-rendering: -moz-crisp-edges; /* fx */
         image-rendering: pixelated; /* chrome, and the thing i actually mean */
@@ -887,7 +894,7 @@ a.photo {
                 display: inline-block;
                 text-align: left;
             }
-            background: url(/theme/images/avatar.png) no-repeat top / 90px;
+            background: url(/images/avatar.png) no-repeat top / 90px;
         }
 
         p {
@@ -1247,7 +1254,7 @@ table.highlighttable {
     margin: 1em 0;
     border-collapse: collapse;
     line-height: 1.2;
-    background: url(/theme/images/textured_paper.png) $solarized-base3;
+    background: url(/images/textured_paper.png) $solarized-base3;
     box-shadow: 0 0 1em $solarized-base2;
 
     pre {
@@ -1267,7 +1274,7 @@ table.highlighttable {
         padding-left: 1em;
         text-align: right;
         color: $solarized-base1;
-        background: url(/theme/images/textured_paper.png) $solarized-base2;
+        background: url(/images/textured_paper.png) $solarized-base2;
         vertical-align: top;
     }
 
