@@ -7,10 +7,10 @@
     <title>{% block title %}{{ config.title }}{% endblock %}</title>
     <meta name="author" content="{{ config.extra.author }}">
 
-    {% if config.generate_feeds_for %}
-    <link href="{{ config.base_url }}/feeds/atom.xml" type="application/atom+xml" rel="alternate"
+    {% if config.generate_feeds %}
+    <link href="{{ config.base_url }}/atom.xml" type="application/atom+xml" rel="alternate"
         title="{{ config.title }} Atom Feed">
-    <link href="{{ config.base_url }}/feeds/rss.xml" type="application/rss+xml" rel="alternate"
+    <link href="{{ config.base_url }}/rss.xml" type="application/rss+xml" rel="alternate"
         title="{{ config.title }} RSS Feed">
     {% endif %}
 

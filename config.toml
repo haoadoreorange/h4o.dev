@@ -5,6 +5,8 @@ default_language = "en"
 compile_sass = true
 minify_html = true
 build_search_index = true
+generate_feeds = true
+feed_filenames = ["atom.xml", "rss.xml"]
 
 [slugify]
 paths_keep_dates = true
@@ -94,6 +96,3 @@ desc = "not sure what to upload there yet"
 [[taxonomies]]
 name = "tags"
 paginate_by = 10
-
-generate_feeds = true
-feed_filenames = ["atom.xml", "rss.xml"]

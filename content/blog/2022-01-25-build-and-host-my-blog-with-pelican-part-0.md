@@ -1,6 +1,5 @@
 +++
 title = "Build & host my blog with Pelican (part 0)"
-date = 2022-01-25
 
 [taxonomies]
 tags = ["build", "blog", "pelican", "python"]

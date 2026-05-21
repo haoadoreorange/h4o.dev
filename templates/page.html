@@ -6,9 +6,7 @@
 {% block content %}
     <article class="single" role="article">
         <header>
-            <p class="meta">
-                <time datetime="{{ page.date }}" pubdate>{{ page.date | date(format="%B %d, %Y") }}</time>
-            </p>
+            <p class="meta">{{ macros::article_time(page=page) }}</p>
             <h1>
                 <a href="{{ page.permalink }}">
                     {{ macros::category_glyph(page=page) }}
@@ -22,23 +20,7 @@
         </div>
 
         <footer>
-            <ul class="meta">
-                <li class="byline author vcard">
-                    Posted by <span class="fn">{{ config.extra.author }}</span>
-                    {% set cat = page.path | split(pat="/") | nth(n=0) %}
-                    in <a class="category" href="/{{ cat }}">
-                        {{ macros::category_glyph(page=page) }}
-                        {{ cat }}</a>
-                </li>
-                <li><time datetime="{{ page.date }}" pubdate>{{ page.date | date(format="%B %d, %Y") }}</time></li>
-                {% if page.taxonomies.tags %}
-                <li class="tags">
-                    {% for tag in page.taxonomies.tags %}
-                    <a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">#{{ tag }}</a>
-                    {% endfor %}
-                </li>
-                {% endif %}
-            </ul>
+            {{ macros::article_footer(page=page) }}
         </footer>
     </article>
 

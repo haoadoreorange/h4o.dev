@@ -1,6 +1,5 @@
 +++
 title = "What does H4O mean ?"
-date = 1997-03-31
 
 [extra]
 hidden = true

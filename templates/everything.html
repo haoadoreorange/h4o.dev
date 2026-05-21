@@ -1,5 +1,6 @@
 {# Everything page - aggregates all articles from all sections, like Pelican's index #}
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block title %}{{ config.title }}{% endblock %}
 
@@ -30,9 +31,7 @@
     {% if not page.extra.hidden %}
     <article>
         <header>
-            <p class="meta">
-                <time datetime="{{ page.date }}" pubdate>{{ page.date | date(format="%B %d, %Y") }}</time>
-            </p>
+            <p class="meta">{{ macros::article_time(page=page) }}</p>
             <h1>
                 <a href="{{ page.permalink }}">
                     {{ macros::category_glyph(page=page) }}

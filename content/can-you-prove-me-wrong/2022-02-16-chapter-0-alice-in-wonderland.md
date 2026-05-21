@@ -1,6 +1,5 @@
 +++
 title = "Chapter 0: Alice in wonderland"
-date = 2022-02-16
 draft = true
 
 [taxonomies]

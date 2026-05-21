@@ -2,3 +2,27 @@
 {% set cat = page.ancestors | nth(n=1) | replace(from="_index.md", to="") | replace(from="/", to="") %}
 <img class="category-glyph" src="{{ get_url(path='images/category-' ~ cat ~ '.png') }}" alt="[{{ cat }}]">
 {% endmacro %}
+
+{% macro article_time(page) %}
+<time datetime="{{ page.date }}" pubdate>{{ page.date | date(format="%B %d, %Y") }}</time>
+{% endmacro %}
+
+{% macro article_footer(page) %}
+<ul class="meta">
+    <li class="byline author vcard">
+        Posted by <span class="fn">{{ config.extra.author }}</span>
+        {% set cat = page.path | split(pat="/") | nth(n=0) %}
+        in <a class="category" href="/{{ cat }}">
+            {{ self::category_glyph(page=page) }}
+            {{ cat }}</a>
+    </li>
+    <li>{{ self::article_time(page=page) }}</li>
+    {% if page.taxonomies.tags %}
+    <li class="tags">
+        {% for tag in page.taxonomies.tags %}
+        <a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">#{{ tag }}</a>
+        {% endfor %}
+    </li>
+    {% endif %}
+</ul>
+{% endmacro %}

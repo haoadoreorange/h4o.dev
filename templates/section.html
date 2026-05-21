@@ -1,12 +1,13 @@
 {# Section template - converted from Pelican _article_list.html + category.html #}
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block title %}{{ section.title }} / {{ config.title }}{% endblock %}
 
 {% block content %}
     <h1>
-        {% if config.generate_feeds_for %}
-        <a href="{{ section.permalink }}feeds/atom.xml" rel="subscribe-atom" class="category-atom">
+        {% if config.generate_feeds %}
+        <a href="{{ config.base_url }}/atom.xml" rel="subscribe-atom" class="category-atom">
             <img src="{{ get_url(path='images/feed-icon-28x28.png') }}" alt="Atom feed" title="Atom feed"></a>
         {% endif %}
         <img class="category-glyph" src="{{ get_url(path='images/category-' ~ section.title ~ '.png') }}"> {{ section.title }}
@@ -22,9 +23,7 @@
     {% if not page.extra.hidden %}
     <article>
         <header>
-            <p class="meta">
-                <time datetime="{{ page.date }}" pubdate>{{ page.date | date(format="%B %d, %Y") }}</time>
-            </p>
+            <p class="meta">{{ macros::article_time(page=page) }}</p>
             <h1>
                 <a href="{{ page.permalink }}">
                     {{ page.title }}

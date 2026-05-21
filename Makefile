@@ -4,7 +4,7 @@ deploy:
 	ssh -t -i $(SSH_ID) $(SSH_USER)@$(SSH_HOST) 'bash -s' < deploy.sh
 
 dev:
-	zola serve
+	zola serve --drafts
 
 build:
 	zola build
