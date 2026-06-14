@@ -54,6 +54,8 @@
 <body>
     {% block entirebody %}
     <header role="banner">
+        {# Avatar is a CSS background; this invisible link overlays it to make it clickable #}
+        <a href="/" class="avatar-link"></a>
         <h1><a href="{{ config.base_url }}/">{{ config.title }}</a></h1>
     </header>
     <div id="main">
@@ -122,6 +124,48 @@
             </div>
         </form>
     </div>
+
+    <script>
+    document.querySelectorAll('pre').forEach(function(pre) {
+        /*
+         * Dedent: allows indenting code blocks in markdown source (for readability)
+         * without rendering the indentation. Finds the minimum leading spaces across
+         * all non-empty lines and strips that many from each line.
+         */
+        var code = pre.querySelector('code');
+        if (code) {
+            var lines = code.textContent.split('\n');
+            var nonEmpty = lines.filter(function(l) { return l.trim(); });
+            if (nonEmpty.length) {
+                var indent = Math.min.apply(null, nonEmpty.map(function(l) { return l.match(/^ */)[0].length; }));
+                if (indent > 0) code.textContent = lines.map(function(l) { return l.slice(indent); }).join('\n');
+            }
+        }
+        /*
+         * Clipboard button: wraps pre in .code-block div, moves background from
+         * pre to wrapper (so pre can have margin-right without a color gap), and
+         * appends a copy button positioned on the wrapper (outside the scrollable pre).
+         */
+        var wrapper = document.createElement('div');
+        wrapper.className = 'code-block';
+        wrapper.style.background = pre.style.backgroundColor;
+        pre.style.background = 'transparent';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+        var btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.textContent = '📋';
+        btn.setAttribute('aria-label', 'Copy code');
+        btn.addEventListener('click', function() {
+            navigator.clipboard.writeText(pre.textContent).then(function() {
+                btn.textContent = '✓';
+                btn.style.color = 'limegreen';
+                setTimeout(function() { btn.textContent = '📋'; btn.style.color = ''; }, 1500);
+            });
+        });
+        wrapper.appendChild(btn);
+    });
+    </script>
 
     <footer role="contentinfo">
         <div style="display: block;">

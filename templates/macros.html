@@ -1,7 +1,8 @@
-{% macro category_glyph(page) %}
+{# Whitespace-trimmed (-%}) to avoid underlined spaces when used inside <a> links #}
+{%- macro category_glyph(page) -%}
 {% set cat = page.ancestors | nth(n=1) | replace(from="_index.md", to="") | replace(from="/", to="") %}
 <img class="category-glyph" src="{{ get_url(path='images/category-' ~ cat ~ '.png') }}" alt="[{{ cat }}]">
-{% endmacro %}
+{%- endmacro %}
 
 {% macro article_time(page) %}
 <time datetime="{{ page.date }}" pubdate>{{ page.date | date(format="%B %d, %Y") }}</time>
@@ -11,10 +12,9 @@
 <ul class="meta">
     <li class="byline author vcard">
         Posted by <span class="fn">{{ config.extra.author }}</span>
-        {% set cat = page.path | split(pat="/") | nth(n=0) %}
-        in <a class="category" href="/{{ cat }}">
-            {{ self::category_glyph(page=page) }}
-            {{ cat }}</a>
+        {# nth(n=1) because page.path starts with /, so nth(n=0) is empty #}
+        {% set cat = page.path | split(pat="/") | nth(n=1) %}
+        in <a class="category" href="/{{ cat }}">{{ self::category_glyph(page=page) }}{{ cat }}</a>
     </li>
     <li>{{ self::article_time(page=page) }}</li>
     {% if page.taxonomies.tags %}

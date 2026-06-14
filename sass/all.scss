@@ -138,6 +138,15 @@ body > header {
     image-rendering: pixelated; /* chrome, and the thing i actually mean */
     -ms-interpolation-mode: nearest-neighbor; /* ie */
 
+    // Match overlay link size to avatar
+    .avatar-link {
+        position: absolute;
+        left: 1rem;
+        bottom: 0;
+        width: 90px;
+        height: 128px;
+    }
+
     @include phone-size {
         margin-top: 1em;
         min-height: auto;
@@ -442,6 +451,11 @@ body > footer {
                         filter: contrast(60%) brightness(1.25);
                         -webkit-filter: contrast(60%) brightness(1.25);
                     }
+                    // Bee icon is naturally wider/shorter than others, stretch it to match
+                    > img[src*="category-dlog"] {
+                        height: $size - 0.5rem;
+                        object-fit: fill;
+                    }
                 }
 
                 .-label {
@@ -486,7 +500,7 @@ body > footer {
     }
 
     #recent_posts {
-        $glyph-width: 2.5em;
+        $glyph-width: 1.7em; // reduce gap between icon and title
         li {
             margin-left: $glyph-width;
         }
@@ -496,6 +510,10 @@ body > footer {
             margin-top: 2px;
             margin-left: -$glyph-width;
         }
+        // Stretched bee sits higher than others, nudge down
+        .category-glyph[src*="category-dlog"] {
+            margin-top: 4px;
+        }
     }
 
     .sidebar-tags {
@@ -504,6 +522,10 @@ body > footer {
         a {
             padding-right: 0.33em;
             white-space: nowrap;
+            /* inline elements don't account for padding in line-break decisions,
+            causing tags to visually overflow. inline-block treats the full box
+            (text + padding) as an atomic unit for wrapping. */
+            display: inline-block;
         }
     }
 }
@@ -774,9 +796,15 @@ a.photo {
 
 .category-glyph {
     max-height: 1.2em;
-    max-width: 1em;
+    max-width: 1.2em; // equal prefix width in archive
     margin-right: 0.25em;
-    vertical-align: -10%; // like baseline, but compensating for feet
+    vertical-align: -15%; // like baseline, but compensating for feet
+}
+// Bee icon is naturally wider/shorter than others, stretch it to match
+.category-glyph[src*="category-dlog"] {
+    height: 0.8em;
+    object-fit: fill;
+    vertical-align: 0%; // stretched image shifts baseline, reset
 }
 @include phone-size {
     h1 .category-glyph {
@@ -1542,9 +1570,36 @@ code {
     background: $block-bg;
 }
 // But not for Pygments.
-.highlight code {
+
+// Zola renders <pre style="background:..."><code>, the inline code bg would bleed through.
+.highlight code, pre code {
     padding: 0;
     background: none;
+}
+/*
+ * Code blocks: JS wraps each <pre> in a .code-block div and moves the
+ * inline background-color from pre to wrapper. This way margin-right on
+ * pre reserves space for the copy button without exposing a gap in the
+ * dark background.
+ */
+.code-block pre {
+    padding: 1em;
+    margin-right: 3em;
+    overflow-x: auto;
+    font-size: 0.85em;
+}
+.code-block {
+    position: relative;
+}
+.copy-btn {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    opacity: 0.6;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,10 +6,10 @@
 {% block content %}
     <article class="single" role="article">
         <header>
-            <p class="meta">{{ macros::article_time(page=page) }}</p>
+            {# Icon links to section listing, date stays plain text #}
+            <p class="meta"><a href="/{{ page.path | split(pat='/') | nth(n=1) }}">{{ macros::category_glyph(page=page) }}</a> {{ macros::article_time(page=page) }}</p>
             <h1>
                 <a href="{{ page.permalink }}">
-                    {{ macros::category_glyph(page=page) }}
                     {{ page.title }}
                 </a>
             </h1>

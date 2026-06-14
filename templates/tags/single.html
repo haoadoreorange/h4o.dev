@@ -7,6 +7,7 @@
     <h1>Tagged: {{ term.name }}</h1>
 
     {% for page in term.pages %}
+    {% if not page.extra.hidden %}
     <article>
         <header>
             <p class="meta">
@@ -30,5 +31,6 @@
         </footer>
         {% endif %}
     </article>
+    {% endif %}
     {% endfor %}
 {% endblock %}
