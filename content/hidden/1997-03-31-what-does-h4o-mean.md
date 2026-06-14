@@ -1,8 +1,5 @@
 +++
 title = "What does H4O mean ?"
-
-[extra]
-hidden = true
 +++
 
 First of all, H4O = HAO...

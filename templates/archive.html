@@ -1,11 +1,11 @@
 {# Archive page - compact timeline grouped by year #}
 {% extends "base.html" %}
 
-{% block title %}Archive / {{ config.title }}{% endblock %}
+{% block title %}archive/{{ config.title }}{% endblock %}
 
 {% block content %}
 <section class="archive">
-    <h1>Archive</h1>
+    <h1>archive</h1>
 
     {% set blog = get_section(path="blog/_index.md") %}
     {% set dlog = get_section(path="dlog/_index.md") %}
